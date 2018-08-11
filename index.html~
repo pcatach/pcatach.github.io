@@ -1,0 +1,26 @@
+<HTML>
+<head>
+  <title>O meu lugarzin secreto (mas exposto)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <link href="./minimalcss/minimal.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Seja bem vindo, meu caro amigo</h1>
+    <h2>Prepare-se para novas sensações, aprendizados e experiências</h2>
+  </header>
+  <br>
+  <div class="col-8">
+    <p> Página em construção. Se você atualizar um número (finito) suficiente de vezes, eventualmente você verá algo novo.<br>
+      Enquanto isso, fique com este gatinho (atualize a página para um novo gatinho)</p>
+    <a href="http://thecatapi.com"><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></a>
+  </div>
+
+  <p> o que estou fazendo agora: <a href="http://learnopengl.com/" target="_blank">learnopengl</a><br></p>
+    
+   <p>meu <a href="https://github.com/pcatach" target="_blank">github</a></p>
+
+</div>
+</body>
+</HTML>
