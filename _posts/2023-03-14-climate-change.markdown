@@ -2,7 +2,7 @@
 layout: post
 title:  "Climate Change: Some Maths"
 subtitle: "And: what does the IPCC Assessment Report 6 say?"
-date:   2023-03-14 09:00:00 +0000
+date:   2023-03-13 09:00:00 +0000
 categories: science
 ---
 
@@ -21,7 +21,8 @@ what it means for us humans and what can we do about it.
 
 ## The Energy Balance model
 
-![](../assets/energy_balance_model.png)
+![](/assets/energy_balance_model.png)
+
 *Schematic of one-layer atmosphere with the energy fluxes involved. [Source](https://www.e-education.psu.edu/meteo469/node/198)*
 
 We start with a simple model where the Earth is considered a spherical black body with radius `r`.
@@ -93,7 +94,8 @@ but over a year, they are a net sink.
 
 Estimates report that land and oceans absorbs around 22 GTon CO2 each year whereas human emissions have been on average around 40 GTon/year since 2010.
 
-![](../assets/carbon_budget.png)
+![](/assets/carbon_budget.png)
+
 *[Source](http://cms2018a.globalcarbonatlas.org/en/content/global-carbon-budget)*
 
 Another source of greenhouse effect is methane. It has a larger warming potential than CO2 - it has higher emissivity. 
@@ -149,12 +151,14 @@ Now, solar activity hasn't changed much for thousands of years, nor has volcanic
 It’s indisputable that atmospheric concentrations of CO2 have increased from 278ppm in the 19th century to 410ppm in 2019, 
 which is a rate of growth unseen in the preceding centuries:
 
-![](../assets/co2_increase.jpg)
+![](/assets/co2_increase.jpg)
+
 *CO2 and N2O concentration evolution in time. Source: AR6*
 
 Our best simulations cannot reproduce the observed temperature increase without including human sources of radiative forcing:
 
-![](../assets/human_climate_change.jpg)
+![](/assets/human_climate_change.jpg)
+
 *Average temperature change model prediction. Source: AR6*
 
 How do we know that humans are to blame for this increase? Aren't there non-human processes that emit those gases into the atmosphere? 
@@ -186,7 +190,8 @@ In high latitudes of both the Northern and the Southern Hemisphere, precipitatio
 The same happens for the tropics and the monsoon regions. 
 Drying can be expected in subtropical regions - southern Africa and the Mediterranean will become progressively drier and warmer.
 
-![](../assets/precipitation_and_temperature.jpg)
+![](/assets/precipitation_and_temperature.jpg)
+
 *Local precipitation and temperature changes, averaged over all CMIP6 models (the number on the top right of each figure is how many models were averaged). There are indicated regions where the models don’t provide a very strong signal (diagonal lines) or where more than 20% of the models provide conflicting signals. Changes are relative to 19th century. Source: AR6*
 
 Due to ocean warming and ice sheet melting, sea levels are predicted to increase by 0.28-0.55m (SSP1-1.9) or 0.63-1.01m (SSP5-8.5) by 2100. 
