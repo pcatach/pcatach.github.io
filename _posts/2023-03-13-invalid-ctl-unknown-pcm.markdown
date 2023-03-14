@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Linux application fails with 'Invalid CTL' and 'Unknown PCM'"
-subtitle: "Plus a summary of ALSA and PulseAudio"
 date:   2023-03-13 09:00:00 +0000
 categories: linux
 ---

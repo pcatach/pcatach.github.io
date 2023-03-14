@@ -1,27 +1,24 @@
 ---
 layout: post
-title:  "Climate Change: Some Maths"
-subtitle: "And: what does the IPCC Assessment Report 6 say?"
-date:   2023-03-13 09:00:00 +0000
+title:  "Climate Change"
+date:   2023-03-14 20:00:00 +0000
 categories: science
 ---
 
-One of the most urgent things that humanity has to do, we are told, is "solving" the climate crisis. 
-So I want to know what is the climate crisis, get familiar with the data, and understand what would it mean to solve the climate crisis.
-
+One of the most urgent things that humanity has to do, we are told, is solving the climate crisis. 
 Every 6-7 years the Intergovernmental Panel on Climate Change (IPCC) publishes an Assessment Report with a review of all published
 literature on climate change. 
 That’s the most important authority on climate science. 
 The 6th report (AR6) was published in 2021 and I gave a read to the Working Group I (WGI) contribution (Physical Science Basis).
 
 I want to understand the basics of the models used to forecast climate change, what the most important findings are, 
-what it means for us humans and what can we do about it.
+what it means for humans and what can we do about it.
 
-> Disclaimer: I'm a mere software developer with a background in physics.
+**Disclaimer: I'm a mere software developer with a background in physics.**
 
 ## The Energy Balance model
 
-![](/assets/energy_balance_model.png)
+![](/assets/energy_balance_model.png){: .align-center}
 
 *Schematic of one-layer atmosphere with the energy fluxes involved. [Source](https://www.e-education.psu.edu/meteo469/node/198)*
 
@@ -31,10 +28,10 @@ We start with a simple model where the Earth is considered a spherical black bod
 The incoming solar energy hitting the earth is
 
 ```
-S = σ * T_sun ^4 * (R_s / D_SE)
+S = σ * T_sun ^4 * (R_s / D_SE)^2
 ```
 
-see the appendix for an explanation of there this formula comes from. `R_s` is the Sun's surface radius and `D_SE`
+where `σ = 5.67 * 10^(-8)` see the appendix for an explanation of there this formula comes from. `R_s` is the Sun's surface radius and `D_SE`
 is the Sun-Earth distance (this comes from energy conservation).
 
 That energy gets spread over the Earth's surface area `4 * π * r^2`, so the incoming energy flux is
@@ -133,7 +130,7 @@ and with increased height the temperature decreases, which from Stefan-Boltzmann
 In other words, more CO2 has diminishing "returns" in the sense of radiation.
 
 Plugging this into (3) with T=288K, we find that a doubling in CO2 concentration would mean a temperature increase of 0.68 K, 
-which is not too far from what we observe right now (0.99 [0.84-1.10] K) - we call this quantity the climate sensitivity.
+which is not too far from what we observe right now (0.99 [0.84-1.10] K).
 Note however that this model disregards the feedback effects discussed above.
 
 The IPCC projects that a CO2 concentration doubling would lead to a 3 [2.5-4] K temperature increase.
@@ -192,7 +189,9 @@ Drying can be expected in subtropical regions - southern Africa and the Mediterr
 
 ![](/assets/precipitation_and_temperature.jpg)
 
-*Local precipitation and temperature changes, averaged over all CMIP6 models (the number on the top right of each figure is how many models were averaged). There are indicated regions where the models don’t provide a very strong signal (diagonal lines) or where more than 20% of the models provide conflicting signals. Changes are relative to 19th century. Source: AR6*
+*Local precipitation and temperature changes, averaged over all CMIP6 models (the number on the top right of each figure is how many models were averaged).*
+*There are indicated regions where the models don’t provide a very strong signal (diagonal lines) or where more than 20% of the models provide conflicting signals.*
+*Changes are relative to 19th century. Source: AR6*
 
 Due to ocean warming and ice sheet melting, sea levels are predicted to increase by 0.28-0.55m (SSP1-1.9) or 0.63-1.01m (SSP5-8.5) by 2100. 
 However, it’s hard to say whether this is due to human causes.
@@ -203,10 +202,101 @@ That's why the IPCC target is to keep climate change below 1.5K from pre-industr
 
 ## Carbon Budget
 
+What is our carbon budget if we want to keep below the 2K target? 
+For a very crude approximation we can correct formula (4) by a factor of 3.6 (in the best case scenario)to account for feedback loops 
+(see section “Climate Sensitivity to CO2”):
+
+```
+ln(C/C_0) = 4 * σ * T^3 * dT / (5.35 * 3.6)
+ = 4 * 5.67 * 10^(-8) * 288^3 * 2 / (5.35 * 3.6)
+ = 0.56
+```
+
+With a starting concentration of 278 ppm (19th century), that is `C = 488 ppm`. Being currently at 412 ppm atmospheric CO2, that means we have left:
+
+```
+(488 ppm - 412 ppm) * (7.81 GtCO2 / ppm) ~ 593 GtCO2
+```
+
+with emissions of 40 GtCO2 per year, this gives us 14 years at the current rate!
+
+In the worst case scenario, with a correction factor of 5.8, we would have already crossed the 2K threshold in terms of emissions, so that the only reason we haven't seen that increase is because we're not at the equilibrium point yet.
+
+## Impact
+
+Whereas the WGI contribution has to do with science and modelling of the climate system, 
+the [Working Group II](https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_SummaryForPolicymakers.pdf) 
+(WGII) contribution to AR6 is concerned with the impact that the forecasts above have to the environment and 
+humans in particular.
+
+According to WGII, climate change has already caused significant impact to ecosystems. 
+As an example, we can take animal range patterns (that is, the area that an animal lives in during its lifetime). 
+If we take all species living in areas where human land usage hasn’t changed for the past 20-250 years, 
+about half of them have changed their range in directions consistent with what would be expected from warming trends - mainly poleward. 
+(We look only at areas where land usage hasn’t changed because in areas where it has changed, 
+land usage by humans is usually the main driver for species changing location.)
+
+These changes have impacted humans too. One interesting example of this is the case of tropical diseases such as dengue, 
+malaria and chukungunya occurring in non-endemic regions in Nepal - where the warming rate is 
+[higher](https://www.researchgate.net/publication/233808431_Climate_Change_Livestock_Sector_Vulnerability_and_Adaptation_in_Nepal) 
+than global average. (For many more examples see Table SM2.1 in AR6 WGII.)
+
+According to the report, we can attribute to climate change the increased frequency and intensity of extreme heat and drought events - 
+heatwaves, [wildfires](https://climate.nasa.gov/ask-nasa-climate/3066/the-climate-connections-of-a-record-fire-year-in-the-us-west/) and 
+floods, although it’s not possible to say which of the individual events can be directly related to human-induced climate change.
+
+Curiously, climate change has caused both a decrease in agricultural productivity (in low latitude regions) and an increase (in high latitude). 
+The extreme weather events have increased the risk of food insecurity in underdeveloped regions in Africa, Asia and America.
+
+In the long term, we can expect these impacts to become more severe and for new effects to kick in, 
+such as an increase in the risk presented by infectious diseases such as dengue.
+
+When we try to forecast the socio-economic impacts of climate change, the climate factors interact so strongly with poverty and health that it's hard to split one from another. 
+The capacity to adapt to climate change will be strongly subject to the level of economic development of different societies. 
+We can't address one without addressing the other.
+
+## Conclusions
+
+- Land + oceans absorb ~22 GTon CO2 each year whereas human emissions are around 40 GTon/year.
+- Climate change makes cold places warmer much more than it makes hot places hotter.
+- We might be near tipping points like permafrost thawing, but it's really hard to tell.
+- Atmospheric concentrations of CO2 have increased from 278ppm in the 19th century to 412ppm in 2019.
+- This caused an unprecedented temperature increase (~1K from pre-industrial levels).
+- We are sure that this increase was caused by greenhouse gas emissions from fossil fuels.
+- The increase has been responsible for more frequent and extreme floods, wildfires and heat waves.
+- Quote from AR6 Chapter 4:
+
+> it is only after a few decades of reducing CO2 emissions that we would clearly see global temperatures starting to stabilize. 
+> By contrast, short-term reductions in CO2 emissions, such as during the COVID-19 pandemic, do not have detectable effects on either CO2 concentration or global temperature. 
+> Only sustained emissions reductions over decades would have a widespread effect across the climate system
+
+One of my takeaways from this is that it’s uncontroversial that human activity has increased the amount of CO2 in the atmosphere drastically, and that has resulted in an average temperature increase in the globe. 
+But anything beyond that is very hard to predict at the moment: we don’t know what the effect of this human caused climate change will be on sea levels, hurricane activity and wildfires, if any. 
+The increase in precipitation is one of the few exceptions where we are more certain on the impact.
+
+In the worst case scenario, if we assume that human-driven climate change will have a major impact on earth, 
+we will want to stop emissions immediately.
+
+One of the best ways we can reduce fossil fuel emissions is using alternative energy sources like wind and solar, or a more reliable option like nuclear energy. 
+It doesn't emit greenhouse gases to operate, and the construction of nuclear facilities involves a relatively small amount of emissions. 
+
+We might need to seriously start removing CO2 from the atmosphere. 
+But who will foot the bill? If we make oil companies pay for it, they will go bankrupt as their profit margins are already tight 
+([low single digits](https://www.investopedia.com/ask/answers/012015/what-average-profit-margin-company-oil-gas-drilling-sector.asp)). 
+Government could pay for it, but right now it's doing the exact opposite: subsidising oil so that transport and food is cheaper. 
+Currently, escaping poverty creates unavoidable emissions, so it's tricky for developed countries to ask developing countries to cut back. 
+Our politician’s views on climate change should be one of the main factors in deciding how we vote.
+
+## References
+
+[This](https://www.e-education.psu.edu/meteo469/) presents more detailed calculations.
+
+[IPCC AR6 Working Group I Report](https://www.ipcc.ch/report/ar6/wg1/) - especially the Summary for Policymakers, the Technical Summary and the FAQ in each of the chapters.
 
 ## Appendix: the Stefan-Boltzmann law
 
-Let's start from the basics. I’ll assume some quantum mechanics background.
+**This assumes some quantum mechanics background.**
+
 A black body is an opaque collection of particles in thermodynamic equilibrium with its environment.
 It can be considered a gas of indistinguishable non-interacting bosons (photons) at a fixed temperature. 
 The mean number of particles in state `s` with energy `ε_s = ℏ*ω_s` is
@@ -251,4 +341,4 @@ P / A = (2 * π * h / c^2) * (k_B * T / h)^4 * π^4 / 15 = σ * T^4
 ```
 
 This is the Stefan-Boltzmann law. It describes the amount of power per unit area that a black body radiates. 
-The Stefan-Boltzmann constant is `σ = 5.67 * 10**(-8)`.
+The Stefan-Boltzmann constant is `σ = 5.67 * 10^(-8)`.
