@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Climate Change"
-date:   2023-03-14 20:00:00 +0000
-categories: science
+date:   2022-06-08 16:23:00 +0000
+categories: natural-science
 ---
 
 One of the most urgent things that humanity has to do, we are told, is solving the climate crisis. 

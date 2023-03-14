@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Linux application fails with 'Invalid CTL' and 'Unknown PCM'"
-date:   2023-03-13 09:00:00 +0000
+date:   2022-05-31 15:42:00 +0000
 categories: linux
 ---
 > Note: this was initially written in May 2022, I'm not sure if it's still valid.
