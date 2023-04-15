@@ -30,3 +30,24 @@ Freud admits that the method will sometimes be wrong.
 
 Faulty acts happen when the speaker has two conflicting intentions and one has been "forced back". 
 The forced back intention returns as a slip of tongue, disturbing the other intention.
+
+Just like faulty acts, dreams have a sense too
+
+Describes dreams as the mind's reaction to unwelcome stimuli that affects us during our sleep, when we ought to be completely withdrawn from any stimulus
+
+Neurologically, dreams are thought (by some) to be the product of the brain using it's own set of experiences and expectations to give a sense to random stimuli
+
+In the case of dreams as with faulty acts, we can only understand the meaning by asking the dreamer what the meaning is
+
+
+In most cases, they will claim they do not know. Freud thinks though that it's probable that
+
+> Only he does not know that he knows it and for that reason thinks he does not know it
+
+He claims that this has been proved already in hypnosis experiments: people first deny recollection but then remember what was suggested to them under the hypnotic state
+
+As with faulty acts, we must ask what first comes to mind in connection to the dream, or in connection with each element of the dream
+
+Freud thinks that our belief that "what first comes to mind" is arbitrary is rooted in an unscientific belief in free will and undeterminism
+
+From what first comes to mind, a chain of free associations will clarify what the meaning is
