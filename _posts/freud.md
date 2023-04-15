@@ -7,37 +7,39 @@ categories: social-science
 
 Sigmund Freud was not just the founder of psychoanalysis, but also the first person to systematically investigate
 how the mind works from a scientific perspective (or at least his understanding of science at the time).
+He created a framework for understanding the human mind that influenced all further developments up to this day.
 
 In his book "Introductory Lectures on Psychoanalysis", Freud attempts to condense into a series of lectures (given around 1915) the foundations for his
 theory of psychoanalysis.
 
 Freud's theory is based on this hypothesis: mental processes (drivers of behaviour, will and thought) are unconscious, only a small fraction of them being conscious.
 The distinction between "conscious" and "unconscious" here is that we have knowledge of our conscious mental processes. If you want
-An empirical definition, a conscious experience can be reported, while an unconscious one can't.
+an empirical definition, a conscious experience can be reported, while an unconscious one can't.
+He believed that although our conscious processes have a lot of influence on our behaviour, there's a big part that is due to this unconscious aspect.
 
-The book is split into the study of 3 specific kinds of mental processes: faulty acts ("parapraxis"), dreams and neuroses.
+The book is split into the study of 3 specific kinds of mental phenomena: faulty acts ("parapraxis"), dreams and neuroses.
 
 ## Faulty Acts
 
-### intention
-For Freud, faulty acts like slips of tongue provide a good model for the study of the unconscious. He thinks that these
+For Freud, a faulty act is an error of speech, writing or memory that occurs when the speaker (or writer, etc) has two conflicting intentions 
+and one has been "forced back". 
+The forced back intention returns as a faulty act, disturbing the other intention.
+
+An example is a slip of tongue: one of the first examples that Freud uses is an instance where the president of the lower house of parliament says in his opening speech 
+"I declare the sitting **closed**".
+
+For Freud, faulty acts like slips of tongue provide a good model for the study of the unconscious. 
+He thinks that these
 are not chance events or symptoms of a distracted mind. 
 Instead, he believes that they have a purpose or intention.
-Faulty acts occur when the speaker has two conflicting intentions and one has been "forced back". 
-The forced back intention returns as a slip of tongue, disturbing the other intention.
+In the example above, taking it literally, the president of the house wanted to close the session.
 
-### example
-One of the first examples that Freud uses is an instance where the president of the lower house of parliament says in his opening speech 
-"I declare the sitting **closed**".
-**Assuming** that faulty acts **do** have an intention, it's clear (just taking it literally), that he wanted to close the session.
-
-## analysis
 How can we know what is the intention of the faulty act? 
 The intended meaning is clear as the speaker will always correct himself. 
 The only way to know what the intention of the faulty act was is to ask the speaker. 
-If he says what first comes to mind, you will have your answer. 
-He might though be tempted to resist, and this will be easy to notice and will point to the path for the interpretation.
-
+In the best case scenario, the speaker will "freely associate", that is,
+say what first comes to mind, and that will answer the question. 
+He might though be tempted to resist. In this case, this resistance will also point the analyst to the path for the interpretation.
 
 ## Dreams
 
