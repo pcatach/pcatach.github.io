@@ -5,12 +5,16 @@ date:   2023-04-04 17:36:00 +0000
 categories: social-science
 ---
 
-Freud's psychoanalysis is based on this hypothesis:
-
-> Mental processes (drivers of behaviour, will and thought) are unconscious and have a purpose, only a small fraction of them being conscious
+Sigmund Freud was not just the founder of psychoanalysis, but also the first person to systematically investigate
+how the mind works from a scientific perspective (or at least his understanding of science at the time).
 
 In his book "Introductory Lectures on Psychoanalysis", Freud attempts to condense into a series of lectures (given around 1915) the foundations for his
 theory of psychoanalysis.
+
+Freud's theory is based on this hypothesis: mental processes (drivers of behaviour, will and thought) are unconscious, only a small fraction of them being conscious.
+The distinction between "conscious" and "unconscious" here is that we have knowledge of our conscious mental processes. If you want
+An empirical definition, a conscious experience can be reported, while an unconscious one can't.
+
 The book is split into the study of 3 specific kinds of mental processes: faulty acts ("parapraxis"), dreams and neuroses.
 
 ## Faulty Acts
