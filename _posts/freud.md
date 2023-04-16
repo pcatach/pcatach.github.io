@@ -5,6 +5,10 @@ date:   2023-04-04 17:36:00 +0000
 categories: social-science
 ---
 
+Freud had a background in the medical sciences and he was interested in finding a deterministic explanation for psychich (mental) phenomenon.
+
+He was a great deal influenced by experiments with suggestion and hypnosis, which led to his development of free association.
+
 Sigmund Freud was not just the founder of psychoanalysis, but also the first person to systematically investigate
 how the mind works from a scientific perspective (or at least his understanding of science at the time).
 He created a framework for understanding the human mind that influenced all further developments up to this day.
