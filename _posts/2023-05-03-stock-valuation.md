@@ -68,7 +68,6 @@ a_i = E(R_i(t)) - b_i * E(Rm(t))
 Here is some code
 
 ```python
-import pandas as pd
 import yfinance as yf
 
 # Download the historical data for MSFT and S&P 500
