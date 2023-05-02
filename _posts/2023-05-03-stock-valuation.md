@@ -68,7 +68,6 @@ a_i = E(R_i(t)) - b_i * E(Rm(t))
 Here is some code
 
 ```python
-from matplotlib import pyplot as plt
 import pandas as pd
 import yfinance as yf
 
