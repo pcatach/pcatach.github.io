@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "My comments on the book: Zero to One, by Peter Thiel"
-date:   2023-03-08 18:35:00 +0000
+date:   2023-05-02 10:50:00 +0000
 categories: social-science
 ---
 
