@@ -19,10 +19,10 @@ I do think though that competition is important to make things better for everyo
 ## Why we focus on competition
 
 The book argues that the world has seen an unprecedented period of increasing wealth and progress (50s, 60s and 80s) 
-which makes western society understand adopt an "indefinite optimist" attitude - 
+which makes western society adopt an "indefinite optimist" attitude - 
 the future will be better, but we don't know how, so we won't plan for it (and thus won't build it).
 
-In Europe we have indefinite pessimism - things have never been as good as they were, 
+In Europe we have indefinite pessimism - things will never be as good as they were, 
 and we have no idea what's coming but it will be worse.
 
 In Thiel's opinion:
@@ -47,7 +47,7 @@ This is the most important question that the founder of a company has to answer:
 The answer to this question is necessarily a secret: a truth about the world that no one else knows. Some examples of secrets:
 
 - Tesla: cleantech is a social phenomenon not an environmental one
-- Airbnb, Uber, Lyft: guests have to pay high hotel prices, property owners can't easily rent out their unoccupied space
+- Airbnb: guests have to pay high hotel prices, property owners can't easily rent out their unoccupied space (similar for Uber, Lyft)
 - Google: proprietary indexing and searching 10x better than anything else
 - Apple: proprietary technology and design 10x better than anything else
 - PayPal: beanie baby eBay sellers had no easy way to transfer money
