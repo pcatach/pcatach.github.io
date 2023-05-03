@@ -185,3 +185,7 @@ The importance of this exercise is that it gives a fundamentals-based estimate
 that we can forecast around. Do you think that AI will be a huge opportunity
 for Microsoft? Then that might justify the current price. Do you think that
 AI will be a flop? Then you might want to sell.
+
+The period where we decided to run the analysis (last 2 years) is also important.
+For META, for example, this period gives a negative expected return, but 
+running at 6 months gives a growth rate of 7.4%.
