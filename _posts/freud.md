@@ -123,3 +123,55 @@ Therefore the dream-thoughts of anger and dissatisfaction were transformed into 
 The dream transformed the present negative feelings into its opposite, an old triumph over her friend for having married and finally satisfied her desire
 So we see how the dream work combined an unconscious/latent wish (that to be married) with the (also unconscious) day's residue (the anger at the friend's late engagement) to produce the dream
 
+### Neuroses
+
+Neurotic symptoms have a sense too, just like parapraxes and dreams.
+Neuroses can be hysterical and obsessional.
+Hysterical neuroses are characterized by a presence of physical symptoms without a medical cause.
+Obsessional neuroses are characterized by persistent and intrusive thoughts and behaviours that the individual feels compelled to repeat.
+
+Freud believed that the sense of neuroses can be discovered through the investigation of the individual's history - the symptom always arises in connection to an experience or sequence of experiences in the past.
+
+These events take the form of fixations or traumas:
+experiences that during a short time "present the mind with an increase of stimulus too powerful to be dealt with" normally.
+
+The fixation or trauma is dealt as if it was an unsolved problem to which the patient must come back to by way of their symptoms.
+He says that being an unconscious process is a precondition for the symptom to exist. 
+Therefore, bringing the symptom's sense to consciousness is therapeutic form of resolving the symptopm
+
+It is not enough though to know, or to be told what the sense of a symptom is. An "internal change" must happen to the patient.
+
+As in parapraxes and dream interpretation, in neuroses we ask the patient to free associate any perceptions in the order he has them, no matter how disagreeable, indiscreet, unimportant or nonsensical they might seem, leaving aside any criticism that may arise.
+
+This process is subject to resistance
+- nothing occurs to me
+- too much occurs
+- long pauses
+- intellectual resistance: curiosity about psychoanalysis, intellectualization, criticism about psychoanalysis
+"he is quite ready to become an adherent of psychoanalysis - on the condition that analysis spares him personally [...] We begin to wonder in the end, however, why this enlightenment is accompanied by no practical advance"
+- transferrence: the patient repeats the attitudes from his earlier life against the analyst
+
+Resistances are key to support analysis since they bring up so much material from the past that points to unconscious processes
+
+An intention can be prevented to come into action by means of a conscious rejection of the intention, which would leave a memory behind.
+On the other hand, a repression of the intention would be a fully unconscious process that leaves no memory, leaving the intention latent.
+
+Repressed mental processes are subject to the same censorship as the manifest dream is
+
+"The day's residues [...] in the state of sleep, had been under the influence of unconscious and repressed wishful impulses; they had been able, in combination with those impulses and thanks to their energy, to construct the latent dream. [...] this material had been worked over (by condensation and displacement) [resulting in the manifest dream]"
+
+Neuroses arise a substitutes for wish fulfilments.
+In histeria it's usually a positive wish fulfilment, in obsession it's usually negative (fending off satisfaction)
+
+### sexual development
+For Freud, sexuality in adults is just a developed form of an undifferentiated "pleasure principle" that is present in all humans
+from childhood, much earlier than when reproductive function is developed. 
+Children's impulses are described by adults as "playfulness", children cannot be held socially responsible for these impulses. But adults take one step further and completely disavow, deny this sexual world, when it's actually an important indicator of healthy development
+
+When children are a few months old, they only experience undifferentiated satisfaction when they are nourished.
+As they mature, they start encountering for the first time opposition to the fulfillment of their wishes.
+They learn to exchange pleasure for social respectability. 
+
+After the 6th year of life, all these experiences are subject to infantile amnesia - they are repressed
+
+This is the time at which the Oedipus complex develops.
