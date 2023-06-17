@@ -175,3 +175,5 @@ They learn to exchange pleasure for social respectability.
 After the 6th year of life, all these experiences are subject to infantile amnesia - they are repressed
 
 This is the time at which the Oedipus complex develops.
+
+Neuroses arise when the frustration causes libido to point to a different object. The different object is deemed inappropriate by other parts of the subject, resulting in conflict. That is, your father punishes you hence you want to kill him, but you can't because you were taught that that's wrong. That's the ground for symptoms that give the libido satisfaction in roundabout ways
