@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Stock valuation from first principles"
-date:   2023-05-03 10:00:00 +0000
+date:   2023-07-10 10:00:00 +0000
 categories: social-science
 ---
 
