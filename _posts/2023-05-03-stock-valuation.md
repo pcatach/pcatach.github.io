@@ -1,9 +1,11 @@
 ---
 layout: post
 title:  "Stock valuation from first principles"
-date:   2023-07-10 10:00:00 +0000
+date:   2023-05-03 10:00:00 +0000
 categories: social-science
 ---
+
+_(updated at 2023-07-07)_
 
 My starting point for this post is this [reddit thread](https://www.reddit.com/r/ValueInvesting/comments/12e0bpa/microsoft_corporation_msft_valuation_the_big_tech/). 
 The thread is from April 6th 2023 and the author is trying to value Microsoft stock.
@@ -21,8 +23,8 @@ about how these estimates should be used.
 ## CAPM
 
 The [Capital Asset Pricing Model](https://en.wikipedia.org/wiki/Capital_asset_pricing_model) (CAPM) essentially
-says that the expected return of a stock is proportional to the risk that an investor takes by holding that stock.
-Thefore, riskier stocks should have higher expected returns - investors are compensated for taking more risk.
+says that the expected return of an asset is proportional to the risk that an investor takes by holding that asset.
+Thefore, riskier assets should have higher expected returns - investors are compensated for taking more risk.
 
 As a refresher, a linear model assumes that given two random variables `X` and `Y`:
 
@@ -38,8 +40,8 @@ b = E(Y) - m * E(X)
 m = Cov(X, Y) / Var(X)
 ```
 
-(the first is trivial taking the expected value of both sides of the equation, the second is a easy 
-expanding the covariance and variance terms).
+(the first is trivial taking the expected value of both sides of the equation. For the second 
+expand the covariance and variance terms).
 
 The statement of the CAPM is:
 
@@ -47,12 +49,12 @@ The statement of the CAPM is:
 R_i = R_f + (R_m - R_f) * b_i + a_i (1)
 ```
 
-where `R_i` is the return of a stock `i`, `R_f` is the risk-free return rate and `R_m` is the average return of the market. 
+where `R_i` is the return of an asset `i`, `R_f` is the risk-free return rate and `R_m` is the average return of the market. 
 This equation uses the independent variable `b_i`, the risk coefficient of `i`, to predict the random variable `R_i`.
-`a_i` is the "abnormal" rate of return, which represents the extra return that the stock `i` has just by being itself.
+`a_i` is the "abnormal" rate of return, which represents the extra return that asset `i` has just by being itself.
 
-We want to estimate `b_i` and `a_i` from historical data so that we can predict the future return of the stock.
-Given `n` observations at times `t` of the return of the stock `i` and the market, we can use linear regression:
+We want to estimate `b_i` and `a_i` from historical data to get an idea of what is the expected return for any asset.
+Given `n` observations at times `t` of the return of asset `i` and the market, we can use linear regression:
 
 ```
 R_i(t) - R_f(t) = a_i + b_i * (Rm(t) - Rf(t)) + e_i(t) (2)
@@ -71,11 +73,11 @@ Here is some code
 import yfinance as yf
 
 # Download the historical data for MSFT and S&P 500
-msft = yf.Ticker("MSFT").history(period="2y")
-sp500 = yf.Ticker("^GSPC").history(period="2y")
+msft = yf.Ticker("MSFT").history(period="10y")
+sp500 = yf.Ticker("^GSPC").history(period="10y")
 
 # Set the risk-free rate
-risk_free_rate = 0.033 / 252  # Assume 3.3% annualized rate, compounded daily
+risk_free_rate = 0.033 / 252  # Assume 3.3% annualised rate, compounded daily
 
 # Compute the daily returns for MSFT and S&P 500
 msft_returns = msft["Close"].pct_change() - risk_free_rate
@@ -89,10 +91,11 @@ variance = sp500_returns.var()
 b = covariance / variance  
 a = msft_returns.mean() - b * sp500_returns.mean()
 
-print(a.round(5), b.round(5))  # today, this gives me 0.00058 1.26472
+print(a.round(5), b.round(5))  # today, this gives me 0.00061 1.20539
 ```
 
-A `b` of 1.26 means that MSFT is heavily dependent on market returns. This is a plot of the daily adjusted returns of MSFT and S&P 500,
+A `b` of 1.2 means that MSFT is heavily dependent on market returns, but more volatile than the market.
+This is a plot of the daily adjusted returns of MSFT and S&P 500,
 together with the linear regression line:
 
 ![MSFT and S&P 500 returns](/assets/msft_sp500_returns.png)
@@ -104,8 +107,9 @@ Now, to use the CAPM model to predict the expected return of MSFT, we can use
 expected_return = risk_free_rate + b * (sp500_returns.mean() - risk_free_rate) + a 
 ```
 
-Today, this gives me 0.00045 which annualized is `(1 + 0.00045)^252 - 1 = 12%`. 
-To convert this estimate into a share price, we will use DCF.
+Today, this gives me 0.00097 which annualised is `(1 + 0.00045)^252 - 1 = 27%`!
+If we break down the terms in the expression above, it will be obvious that most of the contribution comes from alpha (~0.006).
+Accounting just for the risk term, the annualised return we get is `9.5%`. Let's keep this number in mind.
 
 ## DCF
 
@@ -113,21 +117,23 @@ The [Discounted Cash Flow](https://en.wikipedia.org/wiki/Discounted_cash_flow) (
 the expected future cash flows of the company. 
 
 To value a stock according to DCF, we project the future cash flows of the company and then discount them to the present. 
-For example, we computed that the expected return of MSFT is 12%. 
+For example, we computed that the risk premium of MSFT is 9.5%.
 
-Let's assume that this is going to be the case for the next 10 years, 
-after which the company will grow at a rate of 3.3% (the risk-free rate).
-Additionally, we know that Microsoft's cost of capital is 8%, and we'll assume 
-it will decrease to 7.8% in 10 years. 
+Let's assume that this is going to be the case for the next 10 years.
+We'll also assume some growth: maybe we believe that Microsoft can grow at a rate of 12%
+for a few more years (5?), after which the company will grow at 9%, 8%, 7%... until it hits
+a terminal rate of 3.3% (the risk-free rate) on year 10.
 
-The future value of a present cash at a future time `n` is
+These numbers are very important assumptions and growth rate estimates are not easy to come up with.
+
+The future value of a present cashflow at a future time `n` is
 
 ```
 CF(n) = CF(0) * (1 + g)^n
 ```
 
 where `CF(0)` is the present value of the cash flow and `g` is the expected growth rate.
-To discount this future value to the present, we use the cost of capital `k`:
+To discount this future value to the present, we use the discount rate `k`:
 
 ```
 DCF(n) = CF(n) / (1 + k)^n
@@ -139,10 +145,10 @@ So each cash flow can be presently valued as
 DCF(n) = CF(0) * (1 + g)^n / (1 + k)^n
 ```
 
-The sum of all the cash flows is the value of the company:
+The sum of all the cash flows is the value of the company ("enterprise value"):
 
 ```
-Value = Sum(DCF(n)) for n in [1, \infty)
+EV = Sum(DCF(n)) for n in [1, \infty)
 ```
 
 Let's code this up.
@@ -153,30 +159,31 @@ def discounted_cashflow(cf, g, k, n):
     """ Present value of a future cashflow at time n """
     return cf * (1 + g)**n / (1 + k)**n
 
-g = 0.12
-k = 0.08
+g = 0.1
+k = 0.095
 cf = 9.65
-# up to year n = 10
+# up to year n = 5
 value = 0
-for n in range(1, 11):
+for n in range(1, 5):
     value += discounted_cashflow(cf, g, k, n)
 
-# after year n = 10, the rates change
+# from
+
+# after year n = 3, the growth rate changes
 g = 0.033
-k = 0.078
 for n in range(11, 500):
     delta = discounted_cashflow(cf, g, k, n)
     value += delta
     if delta < 0.01:
         break
-value  # 262.91
+value  # 177.89
 ```
 
 In theory, this would suggest that this stock, currently sitting at $305, is 
 massively overvalued. However, there are a few caveats to this model.
 
 Firstly, it assumes a constant (or stepwise) growth rate and 
-cost of capital, which is not realistic. In fact, we saw above that
+discount rate, which is not realistic. In fact, we saw above that
 Microsoft returns are highly correlated with the market.
 It also overlooks the elephant in the room: the big premium on microsoft stocks
 due to the opportunity with AI. 
@@ -185,7 +192,3 @@ The importance of this exercise is that it gives a fundamentals-based estimate
 that we can forecast around. Do you think that AI will be a huge opportunity
 for Microsoft? Then that might justify the current price. Do you think that
 AI will be a flop? Then you might want to sell.
-
-The period where we decided to run the analysis (last 2 years) is also important.
-For META, for example, this period gives a negative expected return, but 
-running at 6 months gives a growth rate of 7.4%.
