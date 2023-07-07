@@ -117,7 +117,8 @@ The [Discounted Cash Flow](https://en.wikipedia.org/wiki/Discounted_cash_flow) (
 the expected future cash flows of the company. 
 
 To value a stock according to DCF, we project the future cash flows of the company and then discount them to the present. 
-For example, we computed that the risk premium of MSFT is 9.5%.
+Microsoft has 7.411 billion outstanding shares, and its last reported net earnings are $71.5 bn.
+We computed that the risk premium of MSFT is 9.5%.
 
 Let's assume that this is going to be the case for the next 10 years.
 We'll also assume some growth: maybe we believe that Microsoft can grow at a rate of 12%
@@ -152,32 +153,42 @@ EV = Sum(DCF(n)) for n in [1, \infty)
 ```
 
 Let's code this up.
-We'll assume a present cashflow of $9.65 per share.
 
 ```python
 def discounted_cashflow(cf, g, k, n):
     """ Present value of a future cashflow at time n """
     return cf * (1 + g)**n / (1 + k)**n
 
-g = 0.1
+g = 0.12
+g_terminal = 0.033
 k = 0.095
-cf = 9.65
+cf = 71.5 # net income in bn
 # up to year n = 5
 value = 0
-for n in range(1, 5):
+for n in range(1, 6):
     value += discounted_cashflow(cf, g, k, n)
 
-# from
+# from year n = 6 to n = 10, the growth rate changes
+rate_change = (g - g_terminal) / 4
+for n in range(6, 10):
+    g -= rate_change
+    value += discounted_cashflow(cf, g, k, n)
 
-# after year n = 3, the growth rate changes
-g = 0.033
-for n in range(11, 500):
+# from year n = 10
+for n in range(10, 500):
     delta = discounted_cashflow(cf, g, k, n)
     value += delta
     if delta < 0.01:
         break
-value  # 177.89
+
+value # 1,319.13
+
 ```
+
+So the enterprise value according to our valuation model would be $1,319.13 bn.
+To get our market cap estimate, we can subtract the total cash assets ($100 bn)
+and subtract debt ($60 bn) taken from Microsoft's balance sheet.
+This results on a market cap of $1,279 bn, or $172 per share.
 
 In theory, this would suggest that this stock, currently sitting at $305, is 
 massively overvalued. However, there are a few caveats to this model.
