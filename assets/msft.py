@@ -76,13 +76,14 @@ def enterprise_value(r):
     return enterprise_value
 
 
-cash = 192559
-debt = 147075
-r = 0.15
-ev = enterprise_value(0.15)
+if __name__ == "__main__":
+    cash = 192559
+    debt = 147075
+    shares_outstanding = 7435
+    r = 0.15
+    ev = enterprise_value(0.15)
 
-print("Enterprise value (mm): {:,.0f}".format(ev))
-market_cap = ev + cash - debt
-print("Market cap (mm): {:,.0f}".format(market_cap))
-shares_outstanding = 7435
-print("Price per share: {:.2f}".format(market_cap / shares_outstanding))
+    print("Enterprise value (mm): {:,.0f}".format(ev))
+    market_cap = ev + cash - debt
+    print("Market cap (mm): {:,.0f}".format(market_cap))
+    print("Price per share: {:.2f}".format(market_cap / shares_outstanding))
