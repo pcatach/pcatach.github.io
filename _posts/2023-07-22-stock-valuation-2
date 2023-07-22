@@ -203,27 +203,23 @@ So for the purposes of forecasting, I'll just look at the net income, which was 
 The question we have to ask is: how much will this grow in the future?
 19% is a very high growth rate, but where is it coming from?
 
-Operating expenses have stayed relatively stable for the past year, and I'll assume they'll remain stable at a 1% growth rate.
+Operating expenses have stayed relatively stable for the past year, and I'll assume they'll remain stable, taxes as well.
 The big question is revenue.
 
 On their [2023 Q3 press release](https://www.microsoft.com/en-us/investor/earnings/FY-2023-Q3/press-release-webcast), Microsoft said that their cloud reveneue grew 22% year-over-year for that quarter ($28.5 bn), citing the innovations in AI and being the "platform of choice" for customers in this space.
 
 In my model, I'll assume that Microsoft's "product" sector will continue to grow at 1% for the next 2 years and then just stop growing (let's say Microsoft will stop investing in these products and fully focus on AI).
-For the "service" segment, I'll assume a continuing growth of 29% for the next 2 years until competition catches up and growth slows down to 10% for the following 8 years (we'll stress test this number in our model).
+For the "service" segment, I'll assume a continuing growth of 29% for the next 2 years until competition catches up and growth slows down to 15% for the following 8 years (we'll stress test this number in our model).
 
-What happens after year 10?
-This (2034) is the point at which [many people](https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/) think we'll get o "AGI" (artificial general intelligence).
-For the purposes of this model, I'll assume that whatever happens here will have a massive impact on Microsoft's business.
-If we do indeed "get AGI", whatever that is (not really in scope for this article), I think it's reasonable to assume that Microsoft will be involved in some way, and may be able to benefit from this, so we'll assume a positive growth rate.
-If we don't get AGI, though, I think that there will be a big correction to the stock market, especially for tech companies involved in AI, and we'll assume a negative growth rate.
-
+That will be my 10-year forecast.
 So let's code this up:
 
 ```python
 def discounted_cashflow(cash_flow, discount_rate, n):
-    return cash_flow / (1 + discount_rate)**n
+    return cash_flow / (1 + discount_rate) ** n
 
-cash = 192559 # in millions
+
+cash = 192559  # in millions
 debt = 147075
 
 product_growth = 0.01
@@ -233,38 +229,41 @@ discount_rate = 0.095
 product_revenue = 72732
 service_revenue = 125538
 
-net_margin = 0.37
+operating_expenses = 50000
+taxes = 10000
 enterprise_value = 0
 
 # up to year n = 2
 for n in range(1, 3):
     product_revenue *= 1 + product_growth
     service_revenue *= 1 + service_growth
-    net_income = (product_revenue + service_revenue) * net_margin
+    net_income = (product_revenue + service_revenue) - (operating_expenses + taxes)
     enterprise_value += discounted_cashflow(net_income, discount_rate, n)
 
 # from year n = 3 to n = 10
-product_growth = -0.1
-service_growth = 0.1 # we'll stress test this later
+product_growth = -0.01
+service_growth = 0.15  # we'll stress test this later
 for n in range(3, 11):
     product_revenue *= 1 + product_growth
     service_revenue *= 1 + service_growth
-    net_income = (product_revenue + service_revenue) * net_margin
+    net_income = (product_revenue + service_revenue) - (operating_expenses + taxes)
     enterprise_value += discounted_cashflow(net_income, discount_rate, n)
 
-# from year n = 11
-service_growth = 0.1 # we'll stress test this later
-for n in range(11, 500):
-    product_revenue *= 1 + product_growth
-    service_revenue *= 1 + service_growth
-    net_income = (product_revenue + service_revenue) * net_margin
-    enterprise_value += discounted_cashflow(net_income, discount_rate, n)
-    if discounted_cashflow(net_income, discount_rate, n) < 0.01:
-        break
-
-print("Enterprise value (bn): {:,.0f}".format(enterprise_value/1e3))
+print("Enterprise value (mm): {:,.0f}".format(enterprise_value))
 market_cap = enterprise_value + cash - debt
-print("Market cap (bn): {:,.0f}".format(market_cap/1e3))
+print("Market cap (mm): {:,.0f}".format(market_cap))
 shares_outstanding = 7435
-print("Price per share: ", market_cap / shares_outstanding)
+print("Price per share: {:.2f}".format(market_cap / shares_outstanding))
 ```
+
+Here is the output:
+
+```
+Enterprise value (mm): 2,146,070
+Market cap (mm): 2,191,554
+Price per share: 294.76
+```
+
+This is much closer to the current market price than my previous estimate.
+But it still says that Microsoft is overvalued by 16%.
+
