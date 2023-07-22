@@ -6,6 +6,7 @@ categories: social-science
 ---
 
 _(updated at 2023-07-07)_
+_(disclaimer: I'm not a financial advisor, this is not financial advice, I'm not responsible for any losses you may incur, etc.)_
 
 My starting point for this post is this [reddit thread](https://www.reddit.com/r/ValueInvesting/comments/12e0bpa/microsoft_corporation_msft_valuation_the_big_tech/). 
 The thread is from April 6th 2023 and the author is trying to value Microsoft stock.

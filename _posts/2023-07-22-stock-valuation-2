@@ -5,6 +5,8 @@ date:   2023-07-22 14:00:00 +0000
 categories: social-science
 ---
 
+_(disclaimer: I'm not a financial advisor, this is not financial advice, I'm not responsible for any losses you may incur, etc.)_
+
 In my previous post ([Stock valuation from first principles](./2023-05-03-stock-valuation.md)) I talked about CAPM and how it can be used to compute discount rates, and arrived at a discount rate of 9.5% for Microsoft.
 I also mentioned DCF, which says that the enterprise value of an asset is the sum of the present value of all future cash flows.
 I used these models to estimate the value of Microsoft shares in a very simplistic way and arrived at a value of $172 per share (or a $1,279 bn market cap).
@@ -27,10 +29,10 @@ We can find these values looking at Microsoft's balance sheet, which can be foun
 You can go ahead and open [https://www.sec.gov/edgar/searchedgar/companysearch] and search for Microsoft. 
 
 Open the latest report, which will either be a 10-K (annual report) or a 10-Q (quarterly report).
-Today (July 2023) the latest report is the 10-Q for the quarter ending March 31, 2023.
+Today (July 2023) the latest report is the 10-Q for the quarter ending March 31, 2023 (Q3).
 Scroll down to the "Balance Sheets" section and you'll see something like this (values in millions of dollars):
 
-|                                        | Q1 23  | Q2 22  |
+|                                        | Q3 23  | Q4 22  |
 | ---                                    | ---    | ---    |
 | **Assets**                             |        |        |
 | Cash and cash equivalents              | 26,562 | 13,932 |
@@ -70,7 +72,7 @@ Making this choice is a bit of an art, and I'm sure a lot of people would disagr
 
 What I'm not including: accounts receivable, inventory, other current assets, lease assets, equity and other investments, goodwill, intangible assets, other long-term assets. Fight me.
 
-This gives us a total of $192,559 million in cash on Q1 2023. This is up from $179,156 million in Q2 2022.
+This gives us a total of $192,559 million in cash on Q3 2023. This is up from $179,156 million in Q4 2022.
 We could ask what Microsoft spent this money on.
 Their cash and equivalents increased by $10 bn and short-term investments decreased by $13 bn, at the same time their PP&E increased by $13 bn.
 They could have used this cash to pay for some of their debt, but we'll shortly see that their debt didn't change much.
@@ -80,7 +82,7 @@ But it's plausible that they liquidated some of their short-term investments to 
 That's because these are liabilities required for Microsoft to operate, and they are not really debts.
 It's worth noting that Microsoft has $15 bn in accounts payable. How impressive is it that they have $15 bn in unpaid bills? You got to have a lot of credit with your sppliers to do that.
 
-ALl debt adds up to $147,075 million in Q1 2023, very close from $156,918 million in Q2 2022.
+All debt adds up to $147,075 million in Q3 2023, very close from $156,918 million in Q4 2022.
 
 This give us:
 
@@ -96,7 +98,7 @@ enterprise_value = 2,556,097 + 45,484 = 2,601,581
 
 We can summarise this in a table:
 
-|                          | Q1 23     |
+|                          | Q3 23     |
 | ---                      | ---       |
 | Market cap (mm $)        | 2,556,097 |
 | Cash (mm $)              |   192,559 |
@@ -115,8 +117,9 @@ The income statement it will look something like this:
 |                                        |   2022  |   2021  |
 | ---                                    |  ---    |  ---    |
 | **Revenue**                            |         |         |
-| Product                                |  72,732 |  71,074 |
-| Service                                | 125,538 |  97,014 |
+| Productivity and Business Processes    |  63,364 |  53,915 |
+| Intelligent Cloud                      |  75,251 |  60,080 |
+| More Personal Computing                |  59,655 |  54,093 |
 | **Cost of revenue**                    |         |         |
 | Product                                |  19,064 |  18,219 |
 | Service                                |  43,586 |  34,013 |
@@ -128,16 +131,22 @@ The income statement it will look something like this:
 | Taxes and other expenses               |  10,645 |   8,645 |
 | **Net income**                         |  72,738 |  61.271 |
 
+The revenue is broken down into 3 segments: 
+
+- Productivity and Business Processes (Office, LinkedIn)
+- Intelligent Cloud (Azure)
+- More Personal Computing (Windows, Xbox, Surface)
+
 Some things jump to the eye: the gross margin, which is the difference between revenue and cost of revenue, is 68% of revenue.
 High gross margins like this are typical of software companies - the cost of producing one more copy of a software is very low.
-It's also worth noting that most of the revenue comes from services, like Azure, not sold products, like Windows licenses.
+It's also worth noting that most of the revenue growth comes from services like Office 365 and Azure, not Windows licenses.
 This has been a trend for a while.
 
 The operating margins are also very high, at 42% of revenue, and its net income is 37% of revenue.
 Microsoft pays $4 bn in taxes, which is a 13% tax rate, compared to an average of 25% in the US.
 They do have a significant part of their business outside of the US.
 
-It's also notable how the services revenue has grown by 29% in 2022 and net income by 19%.
+It's also notable how the cloud sector revenue has grown by 25% in 2022 and net income by 19%.
 
 ## Cash flow statement
 
@@ -197,21 +206,22 @@ Any further expenses like debt repayments, stock buybacks, capital expenditures 
 ## Forecasting
 
 Now, from the point of view of valuation, I don't really care about all this reconciliation.
-After all, the company can chose at any time if it wants to pay dividends, acquire other companies, buy back stock, etc.
+A company's spending on PP&E, acquisitions, stock buybacks, etc. are all decisions that subtract from it's income but at least in theory should feed into future growth.
+So for the purposes of forecasting, I'll just look at the net income, which was $72 bn in 2022, and not worry about the cashflow statement.
 
-So for the purposes of forecasting, I'll just look at the net income, which was $72 bn in 2022.
 The question we have to ask is: how much will this grow in the future?
 19% is a very high growth rate, but where is it coming from?
-
 On their [2023 Q3 press release](https://www.microsoft.com/en-us/investor/earnings/FY-2023-Q3/press-release-webcast), Microsoft said that their cloud reveneue grew 22% year-over-year for that quarter ($28.5 bn), citing the innovations in AI and being the "platform of choice" for customers in this space.
 
-In my model, I'll assume that Microsoft's "product" sector will continue to grow at 1% for the next 2 years and then just stop growing (let's say Microsoft will stop investing in these products and fully focus on AI).
-For the "service" segment, I'll assume a continuing growth of 29% for the next 2 years until competition catches up and growth slows down to 15% for the following 8 years (we'll stress test this number in our model).
+In my model, I'll assume that Microsoft's cloud revenue will continue to grow at 25% year-ver-year for the next 2 years, and then slow down to 15% for the following 8 years (let's say competition catches up).
+We'll stress test this number later.
+
+For the other sectors (Office, Windows, Xbox, etc.), I'll assume that the growth will continue at around 15% for the next 2 years and then decline year after year until it reaches -1% on year 10 (let's say Microsoft will stop investing in these products and fully focus on AI and infrastructure).
 
 Here are my assumptions:
 
-| product segment growth | 1% for 2 years, -1% thereafter |
-| service segment growth | 29% for 2 years, 15% thereafter |
+| cloud segment growth | 25% for 2 years, 15% thereafter |
+| other segment growth | 15% for 2 years, down to -1 on year 10 |
 | gross margins | 68% |
 | operating expenses | $50 bn |
 | tax rate | 13% |
@@ -233,12 +243,12 @@ def net_income(revenue, gross_margin, operating_expenses, tax_rate):
 cash = 192559  # in millions
 debt = 147075
 
-product_growth = 0.01
-service_growth = 0.29
+cloud_growth = 0.25
+other_growth = 0.15
 discount_rate = 0.095
 
-product_revenue = 72732
-service_revenue = 125538
+cloud_revenue = 75251
+other_revenue = 123019
 gross_margin = 0.68
 operating_expenses = 50000
 tax_rate = 0.13
@@ -246,21 +256,23 @@ enterprise_value = 0
 
 # up to year n = 2
 for n in range(1, 3):
-    product_revenue *= 1 + product_growth
-    service_revenue *= 1 + service_growth
+    cloud_revenue *= 1 + cloud_growth
+    other_revenue *= 1 + other_growth
     cashflow = net_income(
-        product_revenue + service_revenue, gross_margin, operating_expenses, tax_rate
+        cloud_revenue + other_revenue, gross_margin, operating_expenses, tax_rate
     )
     enterprise_value += discounted_cashflow(cashflow, discount_rate, n)
 
+
 # from year n = 3 to n = 10
-product_growth = -0.01
-service_growth = 0.15  # we'll stress test this later
+cloud_growth = 0.15
+other_growth = 0.15
 for n in range(3, 11):
-    product_revenue *= 1 + product_growth
-    service_revenue *= 1 + service_growth
+    other_growth -= 0.02
+    cloud_revenue *= 1 + cloud_growth
+    other_revenue *= 1 + other_growth
     cashflow = net_income(
-        product_revenue + service_revenue, gross_margin, operating_expenses, tax_rate
+        cloud_revenue + other_revenue, gross_margin, operating_expenses, tax_rate
     )
     enterprise_value += discounted_cashflow(cashflow, discount_rate, n)
 
@@ -269,25 +281,54 @@ market_cap = enterprise_value + cash - debt
 print("Market cap (mm): {:,.0f}".format(market_cap))
 shares_outstanding = 7435
 print("Price per share: {:.2f}".format(market_cap / shares_outstanding))
+
 ```
 
 Here is the output:
 
 ```
-Enterprise value (mm): 1,219,359
-Market cap (mm): 1,264,843
-Price per share: 170.12
+Enterprise value (mm): 1,188,173
+Market cap (mm): 1,233,657
+Price per share: 165.93
 ```
 
-This is almost exactly the same as my previous estimate of $172 per share.
+This is not too far from my previous estimate of $172 per share.
 
 ## Stress testing
 
 Let's stress test this model.
-I'll vary the 2-year services growth rate between `r` 0 and 30% and see how the price per share changes.
+I'll vary the 2-year cloud growth rate `r` between 0 and 60% and see how the price per share changes.
 
 I'll also add some randomness to the model. At each point in time, revenue will increase (or decrease) by a rate sampled from a normal distribution with mean `r` and standard deviation `0.02`.
 
 Similarly, I'll have the gross margin sampled from a normal distribution with mean `0.68` and standard deviation `0.01`, so it's mostly constrained to be between `0.66` and `0.7`.
 I'll do a similar thing for the operating expenses, having them grow at a rate sampled from a normal distribution with mean `0.02` and standard deviation `0.01`.
-    
+
+I will simulate each `r` scenario 100 times and take the average price per share.
+
+| r | price per share |
+|---|-----------------|
+| 0.00 | 127.91 |
+| 0.05 | 137.26 |
+| 0.10 | 148.90 |
+| 0.15 | 164.15 |
+| 0.20 | 181.85 |
+| 0.25 | 204.29 |
+| 0.30 | 231.67 |
+| 0.35 | 264.04 |
+| 0.40 | 305.21 |
+| 0.45 | 354.57 |
+
+According to this model, a very optimistic 45% cloud/AI growth rate would give us a price per share of $350, which is close to where Microsoft is today.
+
+## Conclusion
+
+45% revenue growth year-over-year for 10 years is a very optimistic assumption, and as far as I know, unprecedented.
+Why the market is paying such a high premium for Microsoft is something that this model has a hard time explaining.
+
+We haven't looked at a lot of things, like the specifics of the cloud market, competition, number of enterprise users, etc.
+Taking a very detailed look at Microsoft would take tens if not hundreds of hours, but could unveil significant flaws in the model and assumptions I used.
+
+I have built a model and I'm sure it can be improved. 
+From here, I would probably wait for a year and revise my figures for growth rate, gross margin, etc. based on the actual results.
+
