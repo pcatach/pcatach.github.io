@@ -203,13 +203,19 @@ So for the purposes of forecasting, I'll just look at the net income, which was 
 The question we have to ask is: how much will this grow in the future?
 19% is a very high growth rate, but where is it coming from?
 
-Operating expenses have stayed relatively stable for the past year, and I'll assume they'll remain stable, taxes as well.
-The big question is revenue.
-
 On their [2023 Q3 press release](https://www.microsoft.com/en-us/investor/earnings/FY-2023-Q3/press-release-webcast), Microsoft said that their cloud reveneue grew 22% year-over-year for that quarter ($28.5 bn), citing the innovations in AI and being the "platform of choice" for customers in this space.
 
 In my model, I'll assume that Microsoft's "product" sector will continue to grow at 1% for the next 2 years and then just stop growing (let's say Microsoft will stop investing in these products and fully focus on AI).
 For the "service" segment, I'll assume a continuing growth of 29% for the next 2 years until competition catches up and growth slows down to 15% for the following 8 years (we'll stress test this number in our model).
+
+Here are my assumptions:
+
+| product segment growth | 1% for 2 years, -1% thereafter |
+| service segment growth | 29% for 2 years, 15% thereafter |
+| gross margins | 68% |
+| operating expenses | $50 bn |
+| tax rate | 13% |
+| discount rate | 9.5% |
 
 That will be my 10-year forecast.
 So let's code this up:
@@ -217,6 +223,11 @@ So let's code this up:
 ```python
 def discounted_cashflow(cash_flow, discount_rate, n):
     return cash_flow / (1 + discount_rate) ** n
+
+
+def net_income(revenue, gross_margin, operating_expenses, tax_rate):
+    operating_income = revenue * gross_margin - operating_expenses
+    return operating_income * (1 - tax_rate)
 
 
 cash = 192559  # in millions
@@ -228,17 +239,19 @@ discount_rate = 0.095
 
 product_revenue = 72732
 service_revenue = 125538
-
+gross_margin = 0.68
 operating_expenses = 50000
-taxes = 10000
+tax_rate = 0.13
 enterprise_value = 0
 
 # up to year n = 2
 for n in range(1, 3):
     product_revenue *= 1 + product_growth
     service_revenue *= 1 + service_growth
-    net_income = (product_revenue + service_revenue) - (operating_expenses + taxes)
-    enterprise_value += discounted_cashflow(net_income, discount_rate, n)
+    cashflow = net_income(
+        product_revenue + service_revenue, gross_margin, operating_expenses, tax_rate
+    )
+    enterprise_value += discounted_cashflow(cashflow, discount_rate, n)
 
 # from year n = 3 to n = 10
 product_growth = -0.01
@@ -246,8 +259,10 @@ service_growth = 0.15  # we'll stress test this later
 for n in range(3, 11):
     product_revenue *= 1 + product_growth
     service_revenue *= 1 + service_growth
-    net_income = (product_revenue + service_revenue) - (operating_expenses + taxes)
-    enterprise_value += discounted_cashflow(net_income, discount_rate, n)
+    cashflow = net_income(
+        product_revenue + service_revenue, gross_margin, operating_expenses, tax_rate
+    )
+    enterprise_value += discounted_cashflow(cashflow, discount_rate, n)
 
 print("Enterprise value (mm): {:,.0f}".format(enterprise_value))
 market_cap = enterprise_value + cash - debt
@@ -259,11 +274,20 @@ print("Price per share: {:.2f}".format(market_cap / shares_outstanding))
 Here is the output:
 
 ```
-Enterprise value (mm): 2,146,070
-Market cap (mm): 2,191,554
-Price per share: 294.76
+Enterprise value (mm): 1,219,359
+Market cap (mm): 1,264,843
+Price per share: 170.12
 ```
 
-This is much closer to the current market price than my previous estimate.
-But it still says that Microsoft is overvalued by 16%.
+This is almost exactly the same as my previous estimate of $172 per share.
 
+## Stress testing
+
+Let's stress test this model.
+I'll vary the 2-year services growth rate between `r` 0 and 30% and see how the price per share changes.
+
+I'll also add some randomness to the model. At each point in time, revenue will increase (or decrease) by a rate sampled from a normal distribution with mean `r` and standard deviation `0.02`.
+
+Similarly, I'll have the gross margin sampled from a normal distribution with mean `0.68` and standard deviation `0.01`, so it's mostly constrained to be between `0.66` and `0.7`.
+I'll do a similar thing for the operating expenses, having them grow at a rate sampled from a normal distribution with mean `0.02` and standard deviation `0.01`.
+    
