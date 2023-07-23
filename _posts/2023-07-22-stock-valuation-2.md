@@ -213,7 +213,7 @@ So for the purposes of forecasting, I'll just look at the net income and not wor
 
 The question we have to ask is: how much will this grow in the future?
 19% is a very high growth rate, but where is it coming from?
-On their [2023 Q3 press release](https://www.microsoft.com/en-us/investor/earnings/FY-2023-Q3/press-release-webcast), Microsoft said that their cloud reveneue grew 22% year-over-year for that quarter ($28.5 bn), citing the innovations in AI and being the "platform of choice" for customers in this space and as an example:
+On their [2023 Q3 press release](https://www.microsoft.com/en-us/investor/earnings/FY-2023-Q3/press-release-webcast), Microsoft said that their cloud reveneue grew 22% year-over-year for that quarter ($28.5 bn), citing the innovations in AI and being the "platform of choice" for customers in this space. In the earnings call, they said:
 
 > Unilever, for example, went all-in on Azure this quarter, in one of the largest-ever cloud migrations in the consumer goods industry.
 
