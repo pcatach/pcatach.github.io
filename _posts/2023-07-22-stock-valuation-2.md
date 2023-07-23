@@ -222,7 +222,7 @@ For the other sectors (Office, Windows, Xbox, etc.), I'll assume that the growth
 
 Here are my assumptions:
 
-| cloud segment growth | 25% for 2 years, 15% thereafter |
+| cloud segment growth | 25% for 2 years, 15% until year 10 and a maturity of 1%|
 | other segment growth | 15% for 2 years, down to -1 on year 10 |
 | gross margins | 68% |
 | operating expenses | $50 bn |
