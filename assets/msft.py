@@ -16,6 +16,8 @@ def net_income(revenue, gross_margin, operating_expenses, tax_rate):
 def cloud_growth_rate(n, r=None):
     if n < 3:
         return 0.25
+    elif n > 10:
+        return 0.01
     else:
         if RANDOMNESS:
             return np.random.normal(r, 0.02)
@@ -50,18 +52,8 @@ def enterprise_value(r):
     operating_expenses = 50000
     tax_rate = 0.13
     enterprise_value = 0
-
-    # up to year n = 2
-    for n in range(1, 3):
-        cloud_revenue *= 1 + cloud_growth_rate(n, r)
-        other_revenue *= 1 + other_growth_rate(n)
-        cashflow = net_income(
-            cloud_revenue + other_revenue, gross_margin(), operating_expenses, tax_rate
-        )
-        enterprise_value += discounted_cashflow(cashflow, DISCOUNT_RATE, n)
-
-    # from year n = 3 to n = 10
-    for n in range(3, 11):
+    
+    for n in range(1, 50):
         cloud_revenue *= 1 + cloud_growth_rate(n, r)
         other_revenue *= 1 + other_growth_rate(n)
         operating_expenses *= 1 + operating_expenses_growth_rate()
@@ -69,6 +61,7 @@ def enterprise_value(r):
             cloud_revenue + other_revenue, gross_margin(), operating_expenses, tax_rate
         )
         enterprise_value += discounted_cashflow(cashflow, DISCOUNT_RATE, n)
+
     return enterprise_value
 
 
