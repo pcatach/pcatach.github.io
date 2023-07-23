@@ -26,11 +26,11 @@ enterprise_value = market_cap - cash + debt
 you can think of it as the cost to take over the firm: you would need to pay for all the shares and also pay off all the debt, but you would get all the cash in the balance sheet.
 
 We can find these values looking at Microsoft's balance sheet, which can be found in the SEC (Securities and Exchange Commission) website.
-You can go ahead and open [https://www.sec.gov/edgar/searchedgar/companysearch] and search for Microsoft. 
+You can go ahead and open [the SEC website](https://www.sec.gov/edgar/searchedgar/companysearch) and search for Microsoft. 
 
 Open the latest report, which will either be a 10-K (annual report) or a 10-Q (quarterly report).
-Today (July 2023) the latest report is the 10-Q for the quarter ending March 31, 2023 (Q3).
-Scroll down to the "Balance Sheets" section and you'll see something like this (values in millions of dollars):
+Today (July 2023) the latest report is the 10-Q for the quarter ending on March 31, 2023 (Q3).
+Scroll down to the "Balance Sheets" section and you'll see something like this (with values in millions of dollars):
 
 |                                        | Q3 23  | Q4 22  |
 | ---                                    | ---    | ---    |
@@ -73,16 +73,17 @@ Making this choice is a bit of an art, and I'm sure a lot of people would disagr
 What I'm not including: accounts receivable, inventory, other current assets, lease assets, equity and other investments, goodwill, intangible assets, other long-term assets. Fight me.
 
 This gives us a total of $192,559 million in cash on Q3 2023. This is up from $179,156 million in Q4 2022.
-We could ask what Microsoft spent this money on.
 Their cash and equivalents increased by $10 bn and short-term investments decreased by $13 bn, at the same time their PP&E increased by $13 bn.
 They could have used this cash to pay for some of their debt, but we'll shortly see that their debt didn't change much.
-But it's plausible that they liquidated some of their short-term investments to buy more property and equipment.
+But it's plausible that they liquidated some of their short-term investments and used that to buy more property and equipment.
 
 "Debt" is any short-term or long-term liability, excluding accounts payable, accrued compensation and lease liability (like data center leases).
 That's because these are liabilities required for Microsoft to operate, and they are not really debts.
-It's worth noting that Microsoft has $15 bn in accounts payable. How impressive is it that they have $15 bn in unpaid bills? You got to have a lot of credit with your sppliers to do that.
+It's worth noting that Microsoft has $15 bn in accounts payable.
+How impressive is it that they have $15 bn in unpaid bills?
+You got to have a lot of credit with your sppliers to do that.
 
-All debt adds up to $147,075 million in Q3 2023, very close from $156,918 million in Q4 2022.
+All debt adds up to $147,075 million in Q3 2023, very close to $156,918 million in Q4 2022.
 
 This give us:
 
@@ -131,7 +132,7 @@ The income statement it will look something like this:
 | Taxes and other expenses               |  10,645 |   8,645 |
 | **Net income**                         |  72,738 |  61.271 |
 
-The revenue is broken down into 3 segments: 
+I broke the revenue down into 3 segments: 
 
 - Productivity and Business Processes (Office, LinkedIn)
 - Intelligent Cloud (Azure)
@@ -142,9 +143,9 @@ High gross margins like this are typical of software companies - the cost of pro
 It's also worth noting that most of the revenue growth comes from services like Office 365 and Azure, not Windows licenses.
 This has been a trend for a while.
 
-The operating margins are also very high, at 42% of revenue, and its net income is 37% of revenue.
+The operating margins are also very high at 42% of revenue and net income is 37% of revenue.
 Microsoft pays $4 bn in taxes, which is a 13% tax rate, compared to an average of 25% in the US.
-They do have a significant part of their business outside of the US.
+They do have a significant part of their business outside of the US though.
 
 It's also notable how the cloud sector revenue has grown by 25% in 2022 and net income by 19%.
 
@@ -180,9 +181,9 @@ It's a bit more complicated, but here is what a summary would look like:
 
 This all means that, despite it's incredible net income, Microsoft actually lost $293 million in cash in 2022.
 
-Indeed, if you look at the 10-K balance sheet, you'll see that cash and cash equivalents decreased from $14,224 billion in 2021 to $13,931 billion in 2022, which is very close to the amount we saw in the 10-Q balance sheet for 2022.
+Indeed, if you look at the 10-K balance sheet, you'll see that cash and cash equivalents decreased from $14,224 billion in 2021 to $13,931 billion in 2022, which is very close to the amount we saw in the 10-Q balance sheet for 2023.
 
-Right, so a net loss of 293. What gives?
+Right, so a net loss of 293.
 Let's break this down. 
 We understand the $72 bn in net income.
 We can see a D&A gain of $14 bn.
@@ -192,9 +193,9 @@ If I buy some equipment today worth $100, I'll deduct $100 from my balance sheet
 Now do I have a $100 asset in my balance sheet forever?
 No, because this equipment will lose value over time.
 Let's say that it loses $10 of value every year, so that in 10 years it's worth $0.
-In the first year, I'll add a $10 expense to my income statement as an operating expense (perhaps under G&A).
+In the first year, I'll add a $10 expense to my income statement as an operating expense (perhaps under G&A or cost of revenue).
 I keep adding this $10 expense every year for 10 years.
-But if I look at the my actual cash arriving in the bank, I don't see this $10 expense.
+But if I look at the my actual bank account, I don't see this $10 expense.
 So I add it back to my operating cash flow.
 (Note: I have to pay taxes on my operating income, not on my operating cash flow).
 
@@ -206,7 +207,8 @@ Any further expenses like debt repayments, stock buybacks, capital expenditures 
 ## Forecasting
 
 Now, from the point of view of valuation, I don't really care about all this reconciliation.
-A company's spending on PP&E, acquisitions, stock buybacks, etc. are all decisions that subtract from its income but at least in theory should feed into future growth.
+Some people would use cash flow from operations in DCF.
+But a company's spending on PP&E, acquisitions, stock buybacks, etc. are all decisions that subtract from its income but at least in theory should feed into future growth.
 So for the purposes of forecasting, I'll just look at the net income and not worry about the cashflow statement.
 
 The question we have to ask is: how much will this grow in the future?
