@@ -43,6 +43,16 @@ for n in range(3, 11):
     )
     enterprise_value += discounted_cashflow(cashflow, discount_rate, n)
 
+# maturity
+cloud_growth = 0.01
+for n in range(11, 50):
+    cloud_revenue *= 1 + cloud_growth
+    other_revenue *= 1 + other_growth
+    cashflow = net_income(
+        cloud_revenue + other_revenue, gross_margin, operating_expenses, tax_rate
+    )
+    enterprise_value += discounted_cashflow(cashflow, discount_rate, n)
+    
 print("Enterprise value (mm): {:,.0f}".format(enterprise_value))
 market_cap = enterprise_value + cash - debt
 print("Market cap (mm): {:,.0f}".format(market_cap))
