@@ -17,7 +17,7 @@ discount_rate = 0.095
 cloud_revenue = 75251
 other_revenue = 123019
 gross_margin = 0.68
-operating_expenses = 50000
+operating_expenses = 52237
 tax_rate = 0.13
 enterprise_value = 0
 
