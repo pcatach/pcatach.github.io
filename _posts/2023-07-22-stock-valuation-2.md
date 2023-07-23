@@ -215,14 +215,14 @@ The question we have to ask is: how much will this grow in the future?
 19% is a very high growth rate, but where is it coming from?
 On their [2023 Q3 press release](https://www.microsoft.com/en-us/investor/earnings/FY-2023-Q3/press-release-webcast), Microsoft said that their cloud reveneue grew 22% year-over-year for that quarter ($28.5 bn), citing the innovations in AI and being the "platform of choice" for customers in this space.
 
-In my model, I'll assume that Microsoft's cloud revenue will continue to grow at 25% year-ver-year for the next 2 years, and then slow down to 15% for the following 8 years (let's say competition catches up).
+In my model, I'll assume that Microsoft's cloud/AI revenue will continue to grow at 25% year-ver-year for the next 2 years, and then slow down to 15% for the following 8 years (let's say competition catches up).
 We'll stress test this number later.
 
 For the other sectors (Office, Windows, Xbox, etc.), I'll assume that the growth will continue at around 15% for the next 2 years and then decline year after year until it reaches -1% on year 10 (let's say Microsoft will stop investing in these products and fully focus on AI and infrastructure).
 
 Here are my assumptions:
 
-| cloud segment growth | 25% for 2 years, 15% until year 10 and a maturity of 1%|
+| cloud segment growth | 25% for 2 years, 15% from year 3 and a maturity of 1%|
 | other segment growth | 15% for 2 years, down to -1 on year 10 |
 | gross margins | 68% |
 | operating expenses | $50 bn |
@@ -271,6 +271,16 @@ cloud_growth = 0.15
 other_growth = 0.15
 for n in range(3, 11):
     other_growth -= 0.02
+    cloud_revenue *= 1 + cloud_growth
+    other_revenue *= 1 + other_growth
+    cashflow = net_income(
+        cloud_revenue + other_revenue, gross_margin, operating_expenses, tax_rate
+    )
+    enterprise_value += discounted_cashflow(cashflow, discount_rate, n)
+
+# maturity
+cloud_growth = 0.01
+for n in range(11, 50):
     cloud_revenue *= 1 + cloud_growth
     other_revenue *= 1 + other_growth
     cashflow = net_income(
