@@ -213,7 +213,13 @@ So for the purposes of forecasting, I'll just look at the net income and not wor
 
 The question we have to ask is: how much will this grow in the future?
 19% is a very high growth rate, but where is it coming from?
-On their [2023 Q3 press release](https://www.microsoft.com/en-us/investor/earnings/FY-2023-Q3/press-release-webcast), Microsoft said that their cloud reveneue grew 22% year-over-year for that quarter ($28.5 bn), citing the innovations in AI and being the "platform of choice" for customers in this space.
+On their [2023 Q3 press release](https://www.microsoft.com/en-us/investor/earnings/FY-2023-Q3/press-release-webcast), Microsoft said that their cloud reveneue grew 22% year-over-year for that quarter ($28.5 bn), citing the innovations in AI and being the "platform of choice" for customers in this space and as an example:
+
+> Unilever, for example, went all-in on Azure this quarter, in one of the largest-ever cloud migrations in the consumer goods industry.
+
+I think that this is a key piece of information:
+
+> In Azure, we expect revenue growth to be 26% to 27% in constant currency, including roughly 1 point from AI services. Growth continues to be driven by our Azure consumption business and we expect the trends from Q3 to continue into Q4 as noted earlier. Our per-user business should continue to benefit from Microsoft 365 suite momentum, though we expect continued moderation in growth rates given the size of the installed base.
 
 In my model, I'll assume that Microsoft's cloud/AI revenue will continue to grow at 25% year-ver-year for the next 2 years, and then slow down to 15% for the following 8 years (let's say competition catches up).
 We'll stress test this number later.
