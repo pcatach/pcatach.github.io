@@ -299,12 +299,12 @@ Code can be found [here](/assets/msft_simple.py).
 Here is the output:
 
 ```
-Enterprise value (mm): 1,175,954
-Market cap (mm): 1,221,438
-Price per share: 164.28
+Enterprise value (mm): $2,533,034
+Market cap (mm): $2,578,518
+Price per share: $346.81
 ```
 
-This is not too far from my previous estimate of $172 per share.
+This is very close to the current valuation.
 
 ## Stress testing
 
