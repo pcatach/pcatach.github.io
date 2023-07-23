@@ -233,6 +233,9 @@ That will be my 10-year forecast.
 So let's code this up:
 
 ```python
+DISCOUNT_RATE = 0.095
+
+
 def discounted_cashflow(cash_flow, discount_rate, n):
     return cash_flow / (1 + discount_rate) ** n
 
@@ -242,66 +245,70 @@ def net_income(revenue, gross_margin, operating_expenses, tax_rate):
     return operating_income * (1 - tax_rate)
 
 
-cash = 192559  # in millions
-debt = 147075
-
-cloud_growth = 0.25
-other_growth = 0.15
-discount_rate = 0.095
-
-cloud_revenue = 75251
-other_revenue = 123019
-gross_margin = 0.68
-operating_expenses = 52237
-tax_rate = 0.13
-enterprise_value = 0
-
-# up to year n = 2
-for n in range(1, 3):
-    cloud_revenue *= 1 + cloud_growth
-    other_revenue *= 1 + other_growth
-    cashflow = net_income(
-        cloud_revenue + other_revenue, gross_margin, operating_expenses, tax_rate
-    )
-    enterprise_value += discounted_cashflow(cashflow, discount_rate, n)
+def cloud_growth_rate(n, r):
+    if n < 3:
+        return 0.25
+    elif n > 10:
+        return 0.01
+    else:
+        return r
 
 
-# from year n = 3 to n = 10
-cloud_growth = 0.15
-other_growth = 0.15
-for n in range(3, 11):
-    other_growth -= 0.02
-    cloud_revenue *= 1 + cloud_growth
-    other_revenue *= 1 + other_growth
-    cashflow = net_income(
-        cloud_revenue + other_revenue, gross_margin, operating_expenses, tax_rate
-    )
-    enterprise_value += discounted_cashflow(cashflow, discount_rate, n)
+def other_growth_rate(n):
+    if n < 3:
+        return 0.15
+    else:
+        return 0.15 - 0.02 * (n - 2)
 
-# maturity
-cloud_growth = 0.01
-for n in range(11, 50):
-    cloud_revenue *= 1 + cloud_growth
-    other_revenue *= 1 + other_growth
-    cashflow = net_income(
-        cloud_revenue + other_revenue, gross_margin, operating_expenses, tax_rate
-    )
-    enterprise_value += discounted_cashflow(cashflow, discount_rate, n)
 
-print("Enterprise value (mm): {:,.0f}".format(enterprise_value))
-market_cap = enterprise_value + cash - debt
-print("Market cap (mm): {:,.0f}".format(market_cap))
-shares_outstanding = 7435
-print("Price per share: {:.2f}".format(market_cap / shares_outstanding))
+def gross_margin():
+    return 0.68
+
+
+def operating_expenses_growth_rate():
+    return 0.0
+
+
+def enterprise_value(r):
+    cloud_revenue = 75251
+    other_revenue = 123019
+    operating_expenses = 52237
+    tax_rate = 0.13
+    enterprise_value = 0
+
+    for n in range(1, 50):
+        cloud_revenue *= 1 + cloud_growth_rate(n, r)
+        other_revenue *= 1 + other_growth_rate(n)
+        operating_expenses *= 1 + operating_expenses_growth_rate()
+        cashflow = net_income(
+            cloud_revenue + other_revenue, gross_margin(), operating_expenses, tax_rate
+        )
+        enterprise_value += discounted_cashflow(cashflow, DISCOUNT_RATE, n)
+
+    return enterprise_value
+
+
+if __name__ == "__main__":
+    cash = 192559
+    debt = 147075
+    shares_outstanding = 7435
+    r = 0.15
+    ev = enterprise_value(r)
+
+    print("Enterprise value (mm): {:,.0f}".format(ev))
+    market_cap = ev + cash - debt
+    print("Market cap (mm): {:,.0f}".format(market_cap))
+    print("Price per share: {:.2f}".format(market_cap / shares_outstanding))
+
 ```
 
 Code can be found [here](/assets/msft_simple.py).
 Here is the output:
 
 ```
-Enterprise value (mm): $2,533,034
-Market cap (mm): $2,578,518
-Price per share: $346.81
+Enterprise value (mm): 2,248,030
+Market cap (mm): 2,293,514
+Price per share: 308.48
 ```
 
 This is very close to the current valuation.
@@ -319,25 +326,22 @@ I'll do a similar thing for the operating expenses, having them grow at a rate s
 I will simulate each `r` scenario 100 times and take the average price per share.
 
 | r | price per share |
-|---|-----------------:|
-| 0.00 | 127.91 |
-| 0.05 | 137.26 |
-| 0.10 | 148.90 |
-| 0.15 | 164.15 |
-| 0.20 | 181.85 |
-| 0.25 | 204.29 |
-| 0.30 | 231.67 |
-| 0.35 | 264.04 |
-| 0.40 | 305.21 |
-| 0.45 | 354.57 |
+|---|-----------------|
+| 0.00 | 167.25 |
+| 0.05 | 196.69 |
+| 0.10 | 238.18 |
+| 0.15 | 292.77 |
+| 0.20 | 360.43 |
+| 0.25 | 457.31 |
+| 0.30 | 577.85 |
+| 0.35 | 734.72 |
+| 0.40 | 935.60 |
+| 0.45 | 1190.69 |
 
-Code can be found [here](/assets/msft.py) and [here](/assets/msft_stress.py).
-According to this model, a very optimistic 45% cloud/AI growth rate would give us a price per share of $350, which is close to where Microsoft is today.
+Code can be found [here](/assets/msft_simple.py) and [here](/assets/msft_stress.py).
+The simulations suggest that the current price is justified if the cloud/AI growth rate is between 15% and 20%.
 
 ## Conclusion
-
-45% revenue growth year-over-year for 10 years is a very optimistic assumption, and as far as I know, unprecedented.
-Why the market is paying such a high premium for Microsoft is something that this model has a hard time explaining.
 
 We haven't looked at a lot of things, like the specifics of the cloud market, competition, number of enterprise users, etc.
 Taking a very detailed look at Microsoft would take tens if not hundreds of hours, but could unveil significant flaws in the model and assumptions I used.
