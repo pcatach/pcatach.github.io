@@ -343,8 +343,5 @@ One straightforward answer is that the share price changes reflect the dividends
 So when share prices fluctuate, they are reflecting a change in expectations about future dividends.
 Note that we don't need actual dividends to be issued for this to work - a company might decide to reinvest all its cash flows instead of paying them out as dividends, but this reinvestment is expected to increase dividends further down the line.
 
-But this would assume that every cash flow is paid out as a dividend each year instead of being reinvested, which is not the case.
-This reinvested 
-
 Another way of looking at it is that the discount rate represents the opportunity cost of waiting to get dividends instead of investing the same money in a diversified portfolio of stocks with the same risk as the company.
 Looking at it this way, it makes sense to use the CAPM rate to discount the cash flows.
