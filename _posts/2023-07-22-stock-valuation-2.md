@@ -299,7 +299,7 @@ This is not too far from my previous estimate of $172 per share.
 ## Stress testing
 
 Let's stress test this model.
-I'll vary the 2-year cloud growth rate `r` between 0 and 60% and see how the price per share changes.
+I'll vary the 2-year cloud growth rate `r` between 0 and 45% and see how the price per share changes.
 
 I'll also add some randomness to the model. At each point in time, revenue will increase (or decrease) by a rate sampled from a normal distribution with mean `r` and standard deviation `0.02`.
 
