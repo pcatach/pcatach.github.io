@@ -33,7 +33,7 @@ Today (July 2023) the latest report is the 10-Q for the quarter ending on March 
 Scroll down to the "Balance Sheets" section and you'll see something like this (with values in millions of dollars):
 
 |                                        | Q3 23  | Q4 22  |
-| ---                                    | ---    | ---    |
+| ---                                    | ---:    | ---:    |
 | **Assets**                             |        |        |
 | Cash and cash equivalents              | 26,562 | 13,932 |
 | Short-term investments                 | 77,865 | 90,826 |
@@ -100,7 +100,7 @@ enterprise_value = 2,556,097 + 45,484 = 2,601,581
 We can summarise this in a table:
 
 |                          | Q3 23     |
-| ---                      | ---       |
+| ---                      | ---:       |
 | Market cap (mm $)        | 2,556,097 |
 | Cash (mm $)              |   192,559 |
 | Debt (mm $)              |   147,075 |
@@ -116,7 +116,7 @@ For this, we'll go instead to the 10-K report so we can see the full year.
 The income statement it will look something like this:
 
 |                                        |   2022  |   2021  |
-| ---                                    |  ---    |  ---    |
+| ---                                    |  ---:    |  ---:    |
 | **Revenue**                            |         |         |
 | Productivity and Business Processes    |  63,364 |  53,915 |
 | Intelligent Cloud                      |  75,251 |  60,080 |
@@ -158,7 +158,7 @@ To match that up (or "reconcile" as they say), we need to look at the cash flow 
 It's a bit more complicated, but here is what a summary would look like:
 
 |                                         |   2022  |
-| ---                                     |  ---    |
+| ---                                     |  ---:    |
 | **Cash flows from operating activities**|         |
 | Net income                              |  72,738 |
 | Depreciation and amortization (D&A)     |  14,460 |
@@ -309,7 +309,7 @@ I'll do a similar thing for the operating expenses, having them grow at a rate s
 I will simulate each `r` scenario 100 times and take the average price per share.
 
 | r | price per share |
-|---|-----------------|
+|---|-----------------:|
 | 0.00 | 127.91 |
 | 0.05 | 137.26 |
 | 0.10 | 148.90 |
