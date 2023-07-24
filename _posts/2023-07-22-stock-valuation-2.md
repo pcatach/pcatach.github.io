@@ -8,7 +8,7 @@ categories: social-science
 _(disclaimer: I'm not a financial advisor, this is not financial advice, I'm not responsible for any losses you may incur, etc.)_
 
 In my previous post ([Stock valuation from first principles](./2023-05-03-stock-valuation.md)) I talked about CAPM and how it can be used to compute discount rates, and arrived at a discount rate of 9.5% for Microsoft.
-I also mentioned DCF, which says that the enterprise value of an asset is the sum of the present value of all future cash flows.
+I also mentioned DCF, which says that the value of an asset is the sum of the present value of all future cash flows.
 I used these models to estimate the value of Microsoft shares in a very simplistic way and arrived at a value of $172 per share (or a $1,279 bn market cap).
 
 In this post I will try to improve on that valuation, particularly looking at the earnings, growth rate and terminal value assumptions.
