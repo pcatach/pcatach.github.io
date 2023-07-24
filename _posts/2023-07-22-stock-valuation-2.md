@@ -94,7 +94,7 @@ net_liabilities = 147,075 - 192,559 = -45,484
 which can be added to the market cap (today) of `$343.77 per share * 7,435 million shares = $2,556,097 billion` to get the enterprise value:
 
 ```
-enterprise_value = 2,556,097 + 45,484 = 2,601,581
+enterprise_value = 2,556,097 - 45,484 = 2,510,613
 ```
 
 We can summarise this in a table:
@@ -104,7 +104,7 @@ We can summarise this in a table:
 | Market cap (mm $)        | 2,556,097 |
 | Cash (mm $)              |   192,559 |
 | Debt (mm $)              |   147,075 |
-| Enterprise value (mm $)  | 2,601,581 |
+| Enterprise value (mm $)  | 2,510,613 |
 | Shares outstanding (mm)  |     7,435 |
 | Price per share ($)      |    343.77 |
 
