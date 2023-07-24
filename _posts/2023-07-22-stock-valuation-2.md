@@ -81,7 +81,7 @@ But it's plausible that they liquidated some of their short-term investments and
 That's because these are liabilities required for Microsoft to operate, and they are not really debts.
 It's worth noting that Microsoft has $15 bn in accounts payable.
 How impressive is it that they have $15 bn in unpaid bills?
-You got to have a lot of credit with your sppliers to do that.
+You got to have a lot of credit with your suppliers to do that.
 
 All debt adds up to $147,075 million in Q3 2023, very close to $156,918 million in Q4 2022.
 
