@@ -183,13 +183,15 @@ This all means that, despite its incredible net income, Microsoft actually lost 
 
 Indeed, if you look at the 10-K balance sheet, you'll see that cash and cash equivalents decreased from $14,224 billion in 2021 to $13,931 billion in 2022, which is very close to the amount we saw in the 10-Q balance sheet for 2023.
 
-The cashflow statement includes $14 bn in D&A that is added back in the cashflow statement to reconcile the net income of $72 bn with the cashflow from operations.
+The cashflow statement includes $14 bn in D&A that is added back to reconcile the net income of $72 bn with the cashflow from operations.
 
 What does this mean?
 If I buy some equipment today worth $100, I'll deduct $100 from my balance sheet cash and add $100 to my balance sheet PP&E.
-Now do I have a $100 asset in my balance sheet forever?
+
+Now, do I have a $100 asset in my balance sheet forever?
 No, because this equipment will lose value over time.
 Let's say that it loses $10 of value every year, so that in 10 years it's worth $0.
+
 In the first year, I'll add a $10 expense to my income statement as an operating expense (perhaps under G&A or cost of revenue).
 I keep adding this $10 expense every year for 10 years.
 But if I look at the my actual bank account, I don't see this $10 expense.
