@@ -179,14 +179,11 @@ It's a bit more complicated, but here is what a summary would look like:
 | Foreign exchange rate changes           |   (141) |
 | **Net cash**                            |   (293) |
 
-This all means that, despite it's incredible net income, Microsoft actually lost $293 million in cash in 2022.
+This all means that, despite its incredible net income, Microsoft actually lost $293 million in cash in 2022.
 
 Indeed, if you look at the 10-K balance sheet, you'll see that cash and cash equivalents decreased from $14,224 billion in 2021 to $13,931 billion in 2022, which is very close to the amount we saw in the 10-Q balance sheet for 2023.
 
-Right, so a net loss of 293.
-Let's break this down. 
-We understand the $72 bn in net income.
-We can see a D&A gain of $14 bn.
+The cashflow statement includes $14 bn in D&A that is added back in the cashflow statement to reconcile the net income of $72 bn with the cashflow from operations.
 
 What does this mean?
 If I buy some equipment today worth $100, I'll deduct $100 from my balance sheet cash and add $100 to my balance sheet PP&E.
@@ -198,9 +195,6 @@ I keep adding this $10 expense every year for 10 years.
 But if I look at the my actual bank account, I don't see this $10 expense.
 So I add it back to my operating cash flow.
 (Note: I have to pay taxes on my operating income, not on my operating cash flow).
-
-In the case of Microsoft, their operating expense includes $14 bn in D&A that is added back in the cashflow statement to reconcile the net income with the cashflow from operations.
-This is the actual cash that Microsoft generated from its operations.
 
 Any further expenses like debt repayments, stock buybacks, capital expenditures (PP&E purchases) and company acquisitions are deducted from the cashflow from operations to arrive at the net cashflow - this is the quantity that gets added to "cash and cash equivalents" in the balance sheet.
 
