@@ -194,8 +194,8 @@ Let's say that it loses $10 of value every year, so that in 10 years it's worth 
 
 In the first year, I'll add a $10 expense to my income statement as an expense (perhaps under G&A or cost of revenue).
 I keep adding this $10 expense every year for 10 years.
-But if I look at the my actual bank account, I don't see this $10 expense.
-So I add it back to my operating cash flow.
+But if I look at my bank account, I don't see this $10 expense.
+So, to reconcile, I add it back to my operating cash flow.
 (Note: I have to pay taxes on my operating income, not on my operating cash flow).
 
 Any further expenses like debt repayments, stock buybacks, capital expenditures (PP&E purchases) and company acquisitions are deducted from the cashflow from operations to arrive at the net cashflow - this is the quantity that gets added to "cash and cash equivalents" in the balance sheet.
@@ -217,7 +217,7 @@ I think that this is a key piece of information:
 
 > In Azure, we expect revenue growth to be 26% to 27% in constant currency, including roughly 1 point from AI services. Growth continues to be driven by our Azure consumption business and we expect the trends from Q3 to continue into Q4 as noted earlier. Our per-user business should continue to benefit from Microsoft 365 suite momentum, though we expect continued moderation in growth rates given the size of the installed base.
 
-In my model, I'll assume that Microsoft's cloud/AI revenue will continue to grow at 25% year-ver-year for the next 2 years, and then slow down to 15% for the following 8 years (let's say competition catches up).
+In my model, I'll assume that Microsoft's cloud/AI revenue will continue to grow at 25% year-over-year for the next 2 years, and then slow down to 15% for the following 8 years (let's say competition catches up).
 We'll stress test this number later.
 
 For the other sectors (Office, Windows, Xbox, etc.), I'll assume that the growth will continue at around 15% for the next 2 years and then decline year after year until it reaches -1% on year 10 (let's say Microsoft will stop investing in these products and fully focus on AI and infrastructure).
@@ -225,7 +225,7 @@ For the other sectors (Office, Windows, Xbox, etc.), I'll assume that the growth
 Here are my assumptions:
 
 | cloud segment growth | 25% for 2 years, 15% from year 3 and a maturity of 1%|
-| other segment growth | 15% for 2 years, down to -1 on year 10 |
+| other segment growth | 15% for 2 years, down to -1% on year 10 |
 | gross margins | 68% |
 | operating expenses | $50 bn |
 | tax rate | 13% |
@@ -349,7 +349,7 @@ We haven't looked at a lot of things, like the specifics of the cloud market, co
 Taking a very detailed look at Microsoft would take tens if not hundreds of hours, but could unveil significant flaws in the model and assumptions I used.
 
 I have built a model and I'm sure it can be improved. 
-From here, I would probably wait for a year and revise my figures for growth rate, gross margin, etc. based on the actual results.
+From here, I would probably wait for a year and revise my figures for growth rate, gross margin, etc. based on the actual numbers.
 
 ## Appendix: why use the CAPM discount rate?
 
