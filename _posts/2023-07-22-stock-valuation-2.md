@@ -192,7 +192,7 @@ Now, do I have a $100 asset in my balance sheet forever?
 No, because this equipment will lose value over time.
 Let's say that it loses $10 of value every year, so that in 10 years it's worth $0.
 
-In the first year, I'll add a $10 expense to my income statement as an operating expense (perhaps under G&A or cost of revenue).
+In the first year, I'll add a $10 expense to my income statement as an expense (perhaps under G&A or cost of revenue).
 I keep adding this $10 expense every year for 10 years.
 But if I look at the my actual bank account, I don't see this $10 expense.
 So I add it back to my operating cash flow.
