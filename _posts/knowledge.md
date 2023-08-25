@@ -1,5 +1,12 @@
 How to know anything and everything
 
+Everything has an explanation, which is often a simple explanation (but not always), in terms of mathematics, be it through biology, physics or economics.
+There is a theory of everything and progress relies on slowly approaching that theory of everything from different directions.
+I only have one life. 
+Some people are more intelligent than other people.
+We don't have to just accept that death happens.
+It's not enough to have correct beliefs and understand things intellectually, you have to *feel* them
+
 Anything will be explainable in terms of atoms, or protons and electrons, or quarks and leptions or any other quantum fields.
 
 Quantum field theory itself can be explained and predicted with outstanding accuracy using mathematics.
