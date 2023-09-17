@@ -1,0 +1,15 @@
+name: Check Broken Links
+on:
+  push:
+    branches:
+      - main
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Install Lychee
+      run: cargo install lychee
+    - name: Check for broken links
+      run: lychee ./ **/*.html
