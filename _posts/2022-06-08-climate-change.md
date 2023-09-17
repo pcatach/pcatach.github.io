@@ -93,8 +93,6 @@ Estimates report that land and oceans absorbs around 22 GTon CO2 each year where
 
 ![](/assets/carbon_budget.png)
 
-*[Source](http://cms2018a.globalcarbonatlas.org/en/content/global-carbon-budget)*
-
 Another source of greenhouse effect is methane. It has a larger warming potential than CO2 - it has higher emissivity. 
 If permafrost (frozen soil in the Northern Hemisphere with large amounts of biomass) begins thawing, 
 lots of methane is going to be released into the atmosphere.

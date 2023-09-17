@@ -19,11 +19,11 @@ Here are some links that I find really interesting:
 
 [Who By Very Slow Decay](https://slatestarcodex.com/2013/07/17/who-by-very-slow-decay/)
 
-[The Flying Trapeze by Danaan Parry](https://www.marymorrissey.com/blog/the-flying-trapeze-from-the-essene-book-of-days-by-danaan-parry/)
+[The Flying Trapeze by Danaan Parry](https://www.psychologytoday.com/gb/blog/financial-life-focus/201402/the-parable-the-trapeze/)
 
 ## Tech
 
-[How to Freaking Find Great Developers By Having Them Read Code](https://freakingrectangle.com/2022/04/15/how-to-freaking-hire-great-developers/)
+[How to Freaking Find Great Developers By Having Them Read Code](https://freakingrectangle.wordpress.com/2022/04/15/how-to-freaking-hire-great-developers/)
 
 [Reverse Engineering the source code of the BioNTech/Pfizer SARS-CoV-2 Vaccine](https://berthub.eu/articles/posts/reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/)
 
