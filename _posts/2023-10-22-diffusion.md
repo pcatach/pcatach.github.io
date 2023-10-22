@@ -268,4 +268,6 @@ The cool thing about this is that it works for any domain - it doesn't have to b
 ![diffusion_starfish](/assets/diffusion_starfish.png)
 ![diffusion_hollow_disk](/assets/diffusion_hollow_disk.png)
 
+_Thanks to [Thiago T. Varella](https://thiagotvarella.github.io/) for helpful suggestions_
+
 <!-- Code can be found [here](assets/diffusion.py) -->
