@@ -53,14 +53,16 @@ where $A_{\mu, \nu}$ is a constant.
 The complete solution is a sum over all possible values of $\mu$ and $\nu$ compatible with the boundary and initial conditions.
 
 To satisfy boundary conditions
-$$u(x,0) = u(x,L) = u(0, y) = u(L, y) = 0$$
+
+$$ u(x,0) = u(x,L) = u(0, y) = u(L, y) = 0 $$
+
 we need to choose $\mu$ and $\nu$ such that $\mu = n \pi / L$ and $\nu = m \pi / L$ for integers $n$ and $m$.
 
 And to satisfy the initial condition, we need to choose $A_{\mu, \nu}$ such that $u(x, y, 0)$ matches the series expansion of $f(x, y)$.
 
 ## Numerical solution
 
-We can also solve this equation numerically.
+Alternatively, we can solve this equation numerically.
 We'll discretise space into a grid of $N$ points $(x_i, y_j)$, where $i$ and $j$ are integers (we can just refer to the points as $(i, j)$ to make it simple).
 We'll also discretise time into a series of $M$ time steps $t_k$ up to a limit $t_M$.
 
@@ -184,7 +186,7 @@ The other options are `wrap` and `symm`.
 `wrap` is equivalent to periodic boundary conditions: it pads the image with copies of itself.
 `symm`, on the other hand, is equivalent to reflecting the image at the edges.
 
-You can see the difference in the following images:
+You can see the difference in the images below:
 
 ![diffusion_boundary](/assets/diffusion_boundary.png)
 
@@ -200,8 +202,9 @@ $$\frac{u_{i+1, j} - u_{i, j}}{\Delta x} = \frac{u_{i, j+1} - u_{i, j}}{\Delta y
 
 or 
 
-$$u_{i+1, j} = u_{i, j}$$
-$$u_{i, j+1} = u_{i, j}$$
+$$ u_{i+1, j} = u_{i, j} $$
+
+$$ u_{i, j+1} = u_{i, j} $$
 
 This is equivalent to reflecting the image at the edges, which is what `symm` does.
 
