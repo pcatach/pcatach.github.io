@@ -8,7 +8,7 @@ categories: social-science
 _(disclaimer: I'm not a financial advisor, this is not financial advice, I'm not responsible for any losses you may incur, etc.)_
 
 In my previous post ([Stock valuation from first principles](./2023-05-03-stock-valuation.md)) I talked about CAPM and how it can be used to compute discount rates, and arrived at a discount rate of 9.5% for Microsoft.
-I also mentioned DCF, which says that the enterprise value of an asset is the sum of the present value of all future cash flows.
+I also mentioned DCF, which says that the value of an asset is the sum of the present value of all future cash flows.
 I used these models to estimate the value of Microsoft shares in a very simplistic way and arrived at a value of $172 per share (or a $1,279 bn market cap).
 
 In this post I will try to improve on that valuation, particularly looking at the earnings, growth rate and terminal value assumptions.
@@ -33,7 +33,7 @@ Today (July 2023) the latest report is the 10-Q for the quarter ending on March 
 Scroll down to the "Balance Sheets" section and you'll see something like this (with values in millions of dollars):
 
 |                                        | Q3 23  | Q4 22  |
-| ---                                    | ---    | ---    |
+| ---                                    | ---:    | ---:    |
 | **Assets**                             |        |        |
 | Cash and cash equivalents              | 26,562 | 13,932 |
 | Short-term investments                 | 77,865 | 90,826 |
@@ -81,7 +81,7 @@ But it's plausible that they liquidated some of their short-term investments and
 That's because these are liabilities required for Microsoft to operate, and they are not really debts.
 It's worth noting that Microsoft has $15 bn in accounts payable.
 How impressive is it that they have $15 bn in unpaid bills?
-You got to have a lot of credit with your sppliers to do that.
+You got to have a lot of credit with your suppliers to do that.
 
 All debt adds up to $147,075 million in Q3 2023, very close to $156,918 million in Q4 2022.
 
@@ -94,17 +94,17 @@ net_liabilities = 147,075 - 192,559 = -45,484
 which can be added to the market cap (today) of `$343.77 per share * 7,435 million shares = $2,556,097 billion` to get the enterprise value:
 
 ```
-enterprise_value = 2,556,097 + 45,484 = 2,601,581
+enterprise_value = 2,556,097 - 45,484 = 2,510,613
 ```
 
 We can summarise this in a table:
 
 |                          | Q3 23     |
-| ---                      | ---       |
+| ---                      | ---:       |
 | Market cap (mm $)        | 2,556,097 |
 | Cash (mm $)              |   192,559 |
 | Debt (mm $)              |   147,075 |
-| Enterprise value (mm $)  | 2,601,581 |
+| Enterprise value (mm $)  | 2,510,613 |
 | Shares outstanding (mm)  |     7,435 |
 | Price per share ($)      |    343.77 |
 
@@ -116,7 +116,7 @@ For this, we'll go instead to the 10-K report so we can see the full year.
 The income statement it will look something like this:
 
 |                                        |   2022  |   2021  |
-| ---                                    |  ---    |  ---    |
+| ---                                    |  ---:    |  ---:    |
 | **Revenue**                            |         |         |
 | Productivity and Business Processes    |  63,364 |  53,915 |
 | Intelligent Cloud                      |  75,251 |  60,080 |
@@ -158,7 +158,7 @@ To match that up (or "reconcile" as they say), we need to look at the cash flow 
 It's a bit more complicated, but here is what a summary would look like:
 
 |                                         |   2022  |
-| ---                                     |  ---    |
+| ---                                     |  ---:    |
 | **Cash flows from operating activities**|         |
 | Net income                              |  72,738 |
 | Depreciation and amortization (D&A)     |  14,460 |
@@ -179,28 +179,24 @@ It's a bit more complicated, but here is what a summary would look like:
 | Foreign exchange rate changes           |   (141) |
 | **Net cash**                            |   (293) |
 
-This all means that, despite it's incredible net income, Microsoft actually lost $293 million in cash in 2022.
+This all means that, despite its incredible net income, Microsoft actually lost $293 million in cash in 2022.
 
 Indeed, if you look at the 10-K balance sheet, you'll see that cash and cash equivalents decreased from $14,224 billion in 2021 to $13,931 billion in 2022, which is very close to the amount we saw in the 10-Q balance sheet for 2023.
 
-Right, so a net loss of 293.
-Let's break this down. 
-We understand the $72 bn in net income.
-We can see a D&A gain of $14 bn.
+The cashflow statement includes $14 bn in D&A that is added back to reconcile the net income of $72 bn with the cashflow from operations.
 
 What does this mean?
 If I buy some equipment today worth $100, I'll deduct $100 from my balance sheet cash and add $100 to my balance sheet PP&E.
-Now do I have a $100 asset in my balance sheet forever?
+
+Now, do I have a $100 asset in my balance sheet forever?
 No, because this equipment will lose value over time.
 Let's say that it loses $10 of value every year, so that in 10 years it's worth $0.
-In the first year, I'll add a $10 expense to my income statement as an operating expense (perhaps under G&A or cost of revenue).
-I keep adding this $10 expense every year for 10 years.
-But if I look at the my actual bank account, I don't see this $10 expense.
-So I add it back to my operating cash flow.
-(Note: I have to pay taxes on my operating income, not on my operating cash flow).
 
-In the case of Microsoft, their operating expense includes $14 bn in D&A that is added back in the cashflow statement to reconcile the net income with the cashflow from operations.
-This is the actual cash that Microsoft generated from its operations.
+In the first year, I'll add a $10 expense to my income statement as an expense (perhaps under G&A or cost of revenue).
+I keep adding this $10 expense every year for 10 years.
+But if I look at my bank account, I don't see this $10 expense.
+So, to reconcile, I add it back to my operating cash flow.
+(Note: I have to pay taxes on my operating income, not on my operating cash flow).
 
 Any further expenses like debt repayments, stock buybacks, capital expenditures (PP&E purchases) and company acquisitions are deducted from the cashflow from operations to arrive at the net cashflow - this is the quantity that gets added to "cash and cash equivalents" in the balance sheet.
 
@@ -213,17 +209,23 @@ So for the purposes of forecasting, I'll just look at the net income and not wor
 
 The question we have to ask is: how much will this grow in the future?
 19% is a very high growth rate, but where is it coming from?
-On their [2023 Q3 press release](https://www.microsoft.com/en-us/investor/earnings/FY-2023-Q3/press-release-webcast), Microsoft said that their cloud reveneue grew 22% year-over-year for that quarter ($28.5 bn), citing the innovations in AI and being the "platform of choice" for customers in this space.
+On their [2023 Q3 press release](https://www.microsoft.com/en-us/investor/earnings/FY-2023-Q3/press-release-webcast), Microsoft said that their cloud reveneue grew 22% year-over-year for that quarter ($28.5 bn), citing the innovations in AI and being the "platform of choice" for customers in this space. In the earnings call, they said:
 
-In my model, I'll assume that Microsoft's cloud revenue will continue to grow at 25% year-ver-year for the next 2 years, and then slow down to 15% for the following 8 years (let's say competition catches up).
+> Unilever, for example, went all-in on Azure this quarter, in one of the largest-ever cloud migrations in the consumer goods industry.
+
+I think that this is a key piece of information:
+
+> In Azure, we expect revenue growth to be 26% to 27% in constant currency, including roughly 1 point from AI services. Growth continues to be driven by our Azure consumption business and we expect the trends from Q3 to continue into Q4 as noted earlier. Our per-user business should continue to benefit from Microsoft 365 suite momentum, though we expect continued moderation in growth rates given the size of the installed base.
+
+In my model, I'll assume that Microsoft's cloud/AI revenue will continue to grow at 25% year-over-year for the next 2 years, and then slow down to 15% for the following 8 years (let's say competition catches up).
 We'll stress test this number later.
 
 For the other sectors (Office, Windows, Xbox, etc.), I'll assume that the growth will continue at around 15% for the next 2 years and then decline year after year until it reaches -1% on year 10 (let's say Microsoft will stop investing in these products and fully focus on AI and infrastructure).
 
 Here are my assumptions:
 
-| cloud segment growth | 25% for 2 years, 15% thereafter |
-| other segment growth | 15% for 2 years, down to -1 on year 10 |
+| cloud segment growth | 25% for 2 years, 15% from year 3 and a maturity of 1%|
+| other segment growth | 15% for 2 years, down to -1% on year 10 |
 | gross margins | 68% |
 | operating expenses | $50 bn |
 | tax rate | 13% |
@@ -233,6 +235,9 @@ That will be my 10-year forecast.
 So let's code this up:
 
 ```python
+DISCOUNT_RATE = 0.095
+
+
 def discounted_cashflow(cash_flow, discount_rate, n):
     return cash_flow / (1 + discount_rate) ** n
 
@@ -242,59 +247,73 @@ def net_income(revenue, gross_margin, operating_expenses, tax_rate):
     return operating_income * (1 - tax_rate)
 
 
-cash = 192559  # in millions
-debt = 147075
-
-cloud_growth = 0.25
-other_growth = 0.15
-discount_rate = 0.095
-
-cloud_revenue = 75251
-other_revenue = 123019
-gross_margin = 0.68
-operating_expenses = 52237
-tax_rate = 0.13
-enterprise_value = 0
-
-# up to year n = 2
-for n in range(1, 3):
-    cloud_revenue *= 1 + cloud_growth
-    other_revenue *= 1 + other_growth
-    cashflow = net_income(
-        cloud_revenue + other_revenue, gross_margin, operating_expenses, tax_rate
-    )
-    enterprise_value += discounted_cashflow(cashflow, discount_rate, n)
+def cloud_growth_rate(n, r):
+    if n < 3:
+        return 0.25
+    elif n > 10:
+        return 0.01
+    else:
+        return r
 
 
-# from year n = 3 to n = 10
-cloud_growth = 0.15
-other_growth = 0.15
-for n in range(3, 11):
-    other_growth -= 0.02
-    cloud_revenue *= 1 + cloud_growth
-    other_revenue *= 1 + other_growth
-    cashflow = net_income(
-        cloud_revenue + other_revenue, gross_margin, operating_expenses, tax_rate
-    )
-    enterprise_value += discounted_cashflow(cashflow, discount_rate, n)
+def other_growth_rate(n):
+    if n < 3:
+        return 0.15
+    else:
+        return 0.15 - 0.02 * (n - 2)
 
-print("Enterprise value (mm): {:,.0f}".format(enterprise_value))
-market_cap = enterprise_value + cash - debt
-print("Market cap (mm): {:,.0f}".format(market_cap))
-shares_outstanding = 7435
-print("Price per share: {:.2f}".format(market_cap / shares_outstanding))
+
+def gross_margin():
+    return 0.68
+
+
+def operating_expenses_growth_rate():
+    return 0.0
+
+
+def enterprise_value(r):
+    cloud_revenue = 75251
+    other_revenue = 123019
+    operating_expenses = 52237
+    tax_rate = 0.13
+    enterprise_value = 0
+
+    for n in range(1, 50):
+        cloud_revenue *= 1 + cloud_growth_rate(n, r)
+        other_revenue *= 1 + other_growth_rate(n)
+        operating_expenses *= 1 + operating_expenses_growth_rate()
+        cashflow = net_income(
+            cloud_revenue + other_revenue, gross_margin(), operating_expenses, tax_rate
+        )
+        enterprise_value += discounted_cashflow(cashflow, DISCOUNT_RATE, n)
+
+    return enterprise_value
+
+
+if __name__ == "__main__":
+    cash = 192559
+    debt = 147075
+    shares_outstanding = 7435
+    r = 0.15
+    ev = enterprise_value(r)
+
+    print("Enterprise value (mm): {:,.0f}".format(ev))
+    market_cap = ev + cash - debt
+    print("Market cap (mm): {:,.0f}".format(market_cap))
+    print("Price per share: {:.2f}".format(market_cap / shares_outstanding))
 
 ```
 
+Code can be found [here](/assets/msft_simple.py).
 Here is the output:
 
 ```
-Enterprise value (mm): 1,175,954
-Market cap (mm): 1,221,438
-Price per share: 164.28
+Enterprise value (mm): 2,248,030
+Market cap (mm): 2,293,514
+Price per share: 308.48
 ```
 
-This is not too far from my previous estimate of $172 per share.
+This is very close to the current valuation.
 
 ## Stress testing
 
@@ -310,29 +329,27 @@ I will simulate each `r` scenario 100 times and take the average price per share
 
 | r | price per share |
 |---|-----------------|
-| 0.00 | 127.91 |
-| 0.05 | 137.26 |
-| 0.10 | 148.90 |
-| 0.15 | 164.15 |
-| 0.20 | 181.85 |
-| 0.25 | 204.29 |
-| 0.30 | 231.67 |
-| 0.35 | 264.04 |
-| 0.40 | 305.21 |
-| 0.45 | 354.57 |
+| 0.00 | 167.25 |
+| 0.05 | 196.69 |
+| 0.10 | 238.18 |
+| 0.15 | 292.77 |
+| 0.20 | 360.43 |
+| 0.25 | 457.31 |
+| 0.30 | 577.85 |
+| 0.35 | 734.72 |
+| 0.40 | 935.60 |
+| 0.45 | 1190.69 |
 
-According to this model, a very optimistic 45% cloud/AI growth rate would give us a price per share of $350, which is close to where Microsoft is today.
+Code can be found [here](/assets/msft_simple.py) and [here](/assets/msft_stress.py).
+The simulations suggest that the current price is justified if the cloud/AI growth rate is between 15% and 20%.
 
 ## Conclusion
-
-45% revenue growth year-over-year for 10 years is a very optimistic assumption, and as far as I know, unprecedented.
-Why the market is paying such a high premium for Microsoft is something that this model has a hard time explaining.
 
 We haven't looked at a lot of things, like the specifics of the cloud market, competition, number of enterprise users, etc.
 Taking a very detailed look at Microsoft would take tens if not hundreds of hours, but could unveil significant flaws in the model and assumptions I used.
 
 I have built a model and I'm sure it can be improved. 
-From here, I would probably wait for a year and revise my figures for growth rate, gross margin, etc. based on the actual results.
+From here, I would probably wait for a year and revise my figures for growth rate, gross margin, etc. based on the actual numbers.
 
 ## Appendix: why use the CAPM discount rate?
 

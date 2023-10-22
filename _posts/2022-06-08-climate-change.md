@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Climate Change From First Principles"
+title:  "Climate change from first principles"
 date:   2022-06-08 16:23:00 +0000
 categories: natural-science
 ---
@@ -92,8 +92,6 @@ but over a year, they are a net sink.
 Estimates report that land and oceans absorbs around 22 GTon CO2 each year whereas human emissions have been on average around 40 GTon/year since 2010.
 
 ![](/assets/carbon_budget.png)
-
-*[Source](http://cms2018a.globalcarbonatlas.org/en/content/global-carbon-budget)*
 
 Another source of greenhouse effect is methane. It has a larger warming potential than CO2 - it has higher emissivity. 
 If permafrost (frozen soil in the Northern Hemisphere with large amounts of biomass) begins thawing, 
