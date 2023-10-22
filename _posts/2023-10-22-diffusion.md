@@ -129,7 +129,7 @@ u = solve_diffusion(u)
 
 We can clearly see diffusion happening:
 
-![diffusion](assets/diffusion.png)
+![diffusion](/assets/diffusion.png)
 
 ## Convolutions
 
@@ -163,7 +163,7 @@ Now let's see what happens when we try this with different initial conditions.
 Let's place the disk lower, near the bottom edge of the square.
 The solution looks like this:
 
-![diffusion_bottom](assets/diffusion_bottom.png)
+![diffusion_bottom](/assets/diffusion_bottom.png)
 
 We can see something interesting happening there near the edge.
 `signal.convolve2d` has a `boundary` argument that lets us specify what happens at the edges. 
@@ -186,7 +186,7 @@ The other options are `wrap` and `symm`.
 
 You can see the difference in the following images:
 
-![diffusion_boundary](assets/diffusion_boundary.png)
+![diffusion_boundary](/assets/diffusion_boundary.png)
 
 In the case where we are modeling the diffusion of a substance through a constrained volume, like a closed container, the appropriate boundary conditions are no flux conditions, also known as Neumann boundary conditions:
 
@@ -214,7 +214,7 @@ We'll assume that we have the cross section of a cylinder, and half of it is fil
 A naive application of `signal.convolve2d` wouldn't do the job because our boundary conditions are not defined at the edge of the image.
 We can try to apply the filter and then crop the result to the domain:
 
-![diffusion_tube_naive](assets/diffusion_tube_naive.png)
+![diffusion_tube_naive](/assets/diffusion_tube_naive.png)
 
 This looks quite nice, but it's not correct.
 It's essentially assuming that the concentration of the substance is zero near the edges, which is false.
@@ -261,11 +261,11 @@ def solve_diffusion3(u, domain):
 
 This gives the correct result:
 
-![diffusion_tube](assets/diffusion_tube.png)
+![diffusion_tube](/assets/diffusion_tube.png)
 
 The cool thing about this is that it works for any domain - it doesn't have to be symmetric:
 
-![diffusion_starfish](assets/diffusion_starfish.png)
-![diffusion_hollow_disk](assets/diffusion_hollow_disk.png)
+![diffusion_starfish](/assets/diffusion_starfish.png)
+![diffusion_hollow_disk](/assets/diffusion_hollow_disk.png)
 
 <!-- Code can be found [here](assets/diffusion.py) -->
