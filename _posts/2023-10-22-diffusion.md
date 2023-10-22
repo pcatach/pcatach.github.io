@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to solve differential equations using convolutions"
-date:   2023-08-21 15:00:00 +0000
+date:   2023-10-23 15:00:00 +0000
 categories: maths
 ---
 
