@@ -1,10 +1,7 @@
 name: Check Broken Links
-on:
-  push:
-    branches:
-      - main
+on: [push]
 jobs:
-  linkChecker:
+  link_checker:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
