@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Coroutines (and dog breeds)"
-date: 2024-07-24 22:00:00 +0000
+title: "Coroutines and dog breeds"
+date: 2024-07-28 10:30:00 +0000
 categories: tech
 ---
 
