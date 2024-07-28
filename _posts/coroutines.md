@@ -20,30 +20,30 @@ class Kennel:
         return DogIterator(self.dogs)
 ```
 
-The `__iter__` method must return an iterator, a class that implements `__next__`. Usually, we make the iterator implement an `__iter__` too but that just returns `self`. An iterator is meant to traverse an iterable _once_
-and then die.
+The `__iter__` method must return an iterator, a class that implements `__next__`. We usually make the iterator implement an `__iter__` too but that just returns `self`.
+An iterator is meant to traverse the contents of an iterable _once_ and then die.
 
 ```python
 class DogIterator:
     def __init__(self, dogs):
         self.dogs = dogs
-        self.i = 0
+        self.i = None
 
     def __iter__(self):
         return self
 
     def __next__(self):
+        self.i = 0 if self.i is None else self.i + 1
         try:
-            next_dog = self.dogs[self.i]
+            dog = self.dogs[self.i]
         except IndexError:
             raise StopIteration
-        self.i += 1
-        return next_dog
+        return dog
 ```
 
-Let's see how this works. The for syntax calls iter() on kennel which calls the `__iter__` method and then it calls next() on the resulting iterator
-until it raises StopIteration. The "for" also handles
-the StopIteration for us.
+Let's see how this works. The `for` syntax calls `iter()` on `kennel` which calls the `__iter__` method, and then it calls `next()` on the resulting iterator
+until it raises `StopIteration`.
+The `for` also handles the `StopIteration` for us.
 
 ```python
 kennel = Kennel(["chihuahua", "german shepherd", "beagle", "boxer"])
@@ -222,10 +222,11 @@ def kennel_generator_factory2(dogs):
             print(f"The {dog} has barked!")
 ```
 
-The expression `command = yield dog` basically divides the generator in two: the `next()` call will take the generator to the right hand side of `command = yield dog`, yield back a `dog` to the caller, and wait.
+The expression `command = yield dog` basically divides the generator in two phases:
+the `next()` call will take the generator to the right hand side of `command = yield dog`, yield back a `dog` to the caller, and wait.
 
 When `send()` is called, its value will be assigned to the left hand side of `command = yield dog` and the generator will run until the following `yield`.
-If `next()` is calle instead of `send()`, then the left hand side will be assigned `None`.
+If `next()` is called instead of `send()`, then the left hand side will be assigned `None`.
 
 ```python
 kennel_generator = kennel_generator_factory2(["poodle", "afghan hound"])
@@ -279,7 +280,7 @@ while True:
         break
 ```
 
-The return value is carried by the StopIteration exception instance, which is a bit awkward but hold that thought.
+The return value is carried by the `StopIteration` exception instance, which is a bit awkward but hold that thought.
 This prints:
 
 ```
@@ -292,7 +293,8 @@ The shih tzu has barked!
 2 dogs barked.
 ```
 
-Now get ready for the magic Remember `yield from`?
+Now get ready for the magic.
+Remember `yield from`?
 It not only delegates control to a subgenerator, it also allows values to be sent "through" it all the way to the subgenerator.
 Let's write a delegating generator:
 
@@ -329,4 +331,4 @@ The pug has barked!
 2 dogs barked in total.
 ```
 
-To learn more, see _Fluent Python_ by Luciano Ramalho.
+To learn more, you can read _Fluent Python_ by Luciano Ramalho.
