@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Coroutines and dog breeds"
+title: "Generators and dog breeds"
 date: 2024-07-28 10:30:00 +0000
 categories: tech
 ---
 
 _(I am using Python 3.12 for this.)_
 
-Hopefully you'll learn something about coroutines, but at the very least you'll learn how many dog breeds I know without googling.
+Hopefully you'll learn something about generators, but at the very least you'll learn how many dog breeds I know without googling.
 
 Let's start with a simple iterable, that is, a class that implements the `__iter__` method:
 
