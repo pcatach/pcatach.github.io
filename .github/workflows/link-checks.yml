@@ -9,4 +9,4 @@ jobs:
     - name: Install Lychee
       run: cargo install lychee
     - name: Check for broken links
-      run: lychee ./**/*.md --exclude ycombinator --exclude sec
+      run: lychee ./**/*.md --exclude ycombinator --exclude sec --exclude reddit
