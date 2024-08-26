@@ -99,4 +99,4 @@ These projects received more than a couple mentions as examples of great code ba
 - [NetBSD](https://github.com/NetBSD/src)
 - [Redis](https://github.com/redis/redis)
 
-I also enjoyed this cute interaction: https://news.ycombinator.com/item?id=40824087
+I also enjoyed this cute interaction: [https://news.ycombinator.com/item?id=40824087](https://news.ycombinator.com/item?id=40824087)
