@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "What is the best code base you've ever worked on?"
-date: 2024-07-02 12:00:00 +0000
+date: 2024-08-26 12:00:00 +0000
 categories: tech
 ---
 
-A few days ago I asked on [Hacker News](https://news.ycombinator.com/item?id=40818809):
+A couple months ago I asked on [Hacker News](https://news.ycombinator.com/item?id=40818809):
 
 > Ask HN: What is the best code base you ever worked on?
 > And what made it so good?
@@ -22,7 +22,7 @@ _Good_ is obviously subjective, and I kept the question intentionally vague as I
 Scrolling through everyone's thoughts I started to notice some patterns, and decided that I would write down whatever I could learn from this, if anything.
 And no, I won't use an LLM or whatever NLP technique to identify clusters in idea-space. Just good old sit down and read one by one.
 
-Here are the main ideas.
+Here are the main ideas I could identify.
 
 ## Great engineers
 
@@ -32,7 +32,7 @@ Here are the main ideas.
 
 ## Good process or tooling
 
-Very little mention of training, interestingly
+Very little mention of training, interestingly.
 
 ### Consistency matters
 
@@ -55,12 +55,11 @@ Ownership and familiarity are more important:
 > 4.  there is virtually no horizontal communication
 > 5.  mediocre ones rise to the level of their incompetence and infest the lives of others
 > 6.  and so on and so forth...
->     (source)[https://news.ycombinator.com/item?id=40819086]
+> (source)[https://news.ycombinator.com/item?id=40819086]
 
 ## Monorepo vs small repos
 
-Consensus seems to be: if systems are almost 100% independent, split, if not, keep monorepo to avoid dependency hell
-Monorepo needs good tooling
+Consensus seems to be: if systems are almost 100% independent, split, if not, keep monorepo to avoid dependency hell. And that monorepo needs good tooling.
 
 ## Google and Facebook
 
@@ -80,14 +79,15 @@ A few alleged features:
 > - Shortcuts for deep-linking to a file/version/line make sharing code easy-peasy.
 > - A ton of presubmit checks ensure uniform code/test quality.
 > - Code reviews are required, and so is pairing tests with code changes.
+> (source)[https://news.ycombinator.com/item?id=40823142]
 
 ## Specific mentions
 
 These projects received more than a couple mentions as examples of great code bases:
 
 - [PostgreSQL](https://github.com/postgres/postgres)
-- Kubernetes
-- NetBSD
-- Redis
+- [Kubernetes](https://github.com/kubernetes/kubernetes)
+- [NetBSD](https://github.com/NetBSD/src)
+- [Redis](https://github.com/redis/redis)
 
 I also enjoyed this cute interaction: https://news.ycombinator.com/item?id=40824087
