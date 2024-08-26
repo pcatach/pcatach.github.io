@@ -8,7 +8,9 @@ categories: tech
 A couple months ago I asked on [Hacker News](https://news.ycombinator.com/item?id=40818809):
 
 > Ask HN: What is the best code base you ever worked on?
+> 
 > And what made it so good?
+>
 > Was there someone enforcing good practices top down? Just being in a group of great engineers? Or something else?
 
 I asked the question on a Friday morning during my commute and didn't expect much. To my surprise, it got quite popular, hit the front page of HN and at the moment of writing has 454 comments. This was a bit awkward as I realised there was a mistake in the title (should have been "you've" and not "you"), but hey.
@@ -27,7 +29,9 @@ Here are the main ideas I could identify.
 ## Great engineers
 
 > Ultimately, the reason it was good was because the engineers had zero ego on top of having excellent skills. [...] every time some new requirement came up, these senior / principal engineers would discuss it in the most civilized matter I have ever seen.
+> 
 > E.g, "we need to come up with a way to implement X". Person A gives their idea, person B gives another idea and so on until everybody shared their thoughts. Then someone would say "I think what person C said makes the most sense" and everybody would agree and that was it. 30 minutes to hear everybody out, 3 minutes to discuss who will do it and when and the meeting was over.
+
 (source)[https://news.ycombinator.com/item?id=40819222]
 
 ## Good process or tooling
@@ -37,6 +41,7 @@ Very little mention of training, interestingly.
 ### Consistency matters
 
 > Worked on a codebase for a large safety-critical system where everything was 100% documented, and the development guide for the project was followed so closely that you couldn't tell, across millions of lines of code, that the whole thing wasn't written by one person. Absolutely impressive levels of attention to detail everywhere, down to not even being able to find typographical errors in comments or documentation (a typo in a comment was treated just as seriously as any other bug).
+
 (source)[https://news.ycombinator.com/item?id=40819140]
 
 ### Consistency doesn't matter
@@ -44,7 +49,9 @@ Very little mention of training, interestingly.
 Ownership and familiarity are more important:
 
 > I've found that familiarity with the codebase is more important than having it be perfectly engineered. Once you're really familiar with the codebase, you know where dragons be, and you can make changes more easily. And God (PM) forbid, if you ever find yourself with some extra free time you might even reduce the size of dragons over time.
+>
 > This brings me to my final point. Any codebase that I really enjoyed working with was the one that was constantly evolving
+
 (source)[https://news.ycombinator.com/item?id=40819057]
 
 > I now work for an organization that discourages code ownership, and it struggles on many fronts:
@@ -55,6 +62,7 @@ Ownership and familiarity are more important:
 > 4.  there is virtually no horizontal communication
 > 5.  mediocre ones rise to the level of their incompetence and infest the lives of others
 > 6.  and so on and so forth...
+
 (source)[https://news.ycombinator.com/item?id=40819086]
 
 ## Monorepo vs small repos
@@ -79,6 +87,7 @@ A few alleged features:
 > - Shortcuts for deep-linking to a file/version/line make sharing code easy-peasy.
 > - A ton of presubmit checks ensure uniform code/test quality.
 > - Code reviews are required, and so is pairing tests with code changes.
+
 (source)[https://news.ycombinator.com/item?id=40823142]
 
 ## Specific mentions
