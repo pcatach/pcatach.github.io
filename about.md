@@ -4,14 +4,11 @@ title: About
 permalink: /about/
 ---
 
-![](assets/map.jpg)
-*Credits: [Martin Kuppe](https://www.youtube.com/watch?v=XqpvBaiJRHo)*
-
 This is a blog about what goes on inside my head.
 
-Here are some links that I find really interesting:
+Here are some links that I like:
 
-## Life and things
+## Life
 
 [What You'll Wish You'd Known](http://www.paulgraham.com/hs.html)
 
@@ -19,19 +16,19 @@ Here are some links that I find really interesting:
 
 [Who By Very Slow Decay](https://slatestarcodex.com/2013/07/17/who-by-very-slow-decay/)
 
-[The Flying Trapeze by Danaan Parry](https://www.psychologytoday.com/gb/blog/financial-life-focus/201402/the-parable-the-trapeze/)
+[The Flying Trapeze](https://www.psychologytoday.com/gb/blog/financial-life-focus/201402/the-parable-the-trapeze/)
 
 ## Tech
 
-[How to Freaking Find Great Developers By Having Them Read Code](https://freakingrectangle.wordpress.com/2022/04/15/how-to-freaking-hire-great-developers/)
+[Don't Call Yourself a Programmer](https://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/)
 
 [Reverse Engineering the source code of the BioNTech/Pfizer SARS-CoV-2 Vaccine](https://berthub.eu/articles/posts/reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/)
 
 ## Maths and physics
 
-[Richard Hamming: You and Your Research](http://www.paulgraham.com/hamming.html)
+[You and Your Research](http://www.paulgraham.com/hamming.html)
 
-[A Stroke of Genius: Striving for Greatness in All You Do](https://www.mccurley.org/advice/hamming_advice.html)
+[Striving for Greatness in All You Do](https://www.mccurley.org/advice/hamming_advice.html)
 
 [Doing well in your courses](https://cs.stanford.edu/people/karpathy/advice.html)
 
@@ -43,7 +40,6 @@ Here are some links that I find really interesting:
 
 [What Graduate School in Theoretical Physics Is Really Like](https://nautil.us/what-does-any-of-this-have-to-do-with-physics-236309/)
 
-[The Curious Wavefunction: What is chemical intuition?](http://wavefunction.fieldofscience.com/2016/09/what-is-chemical-intuition.html)
+[What is chemical intuition?](http://wavefunction.fieldofscience.com/2016/09/what-is-chemical-intuition.html)
 
 [The World Cup from a Quantum Perspective](https://quantumfrontiers.com/2018/07/02/the-world-cup-from-a-quantum-perspective/)
-

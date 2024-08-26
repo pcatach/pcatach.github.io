@@ -7,9 +7,9 @@ categories: social-science
 
 _(disclaimer: I'm not a financial advisor, this is not financial advice, I'm not responsible for any losses you may incur, etc.)_
 
-In my previous post ([Stock valuation from first principles](./2023-05-03-stock-valuation.md)) I talked about CAPM and how it can be used to compute discount rates, and arrived at a discount rate of 9.5% for Microsoft.
+In my previous post ([Stock valuation from first principles]({% post_url 2023-05-03-stock-valuation %})) I talked about CAPM and how it can be used to compute discount rates, and arrived at a discount rate of 9.5% for Microsoft.
 I also mentioned DCF, which says that the value of an asset is the sum of the present value of all future cash flows.
-I used these models to estimate the value of Microsoft shares in a very simplistic way and arrived at a value of $172 per share (or a $1,279 bn market cap).
+I used these models to estimate the value of Microsoft shares in a very simplistic way and arrived at a value of \\$172 per share (or a \\$1,279 bn market cap).
 
 In this post I will try to improve on that valuation, particularly looking at the earnings, growth rate and terminal value assumptions.
 For that, we'll look into the financial statements of Microsoft.
@@ -72,18 +72,18 @@ Making this choice is a bit of an art, and I'm sure a lot of people would disagr
 
 What I'm not including: accounts receivable, inventory, other current assets, lease assets, equity and other investments, goodwill, intangible assets, other long-term assets. Fight me.
 
-This gives us a total of $192,559 million in cash on Q3 2023. This is up from $179,156 million in Q4 2022.
-Their cash and equivalents increased by $10 bn and short-term investments decreased by $13 bn, at the same time their PP&E increased by $13 bn.
+This gives us a total of \\$192,559 million in cash on Q3 2023. This is up from \\$179,156 million in Q4 2022.
+Their cash and equivalents increased by \\$10 bn and short-term investments decreased by \\$13 bn, at the same time their PP&E increased by \\$13 bn.
 They could have used this cash to pay for some of their debt, but we'll shortly see that their debt didn't change much.
 But it's plausible that they liquidated some of their short-term investments and used that to buy more property and equipment.
 
 "Debt" is any short-term or long-term liability, excluding accounts payable, accrued compensation and lease liability (like data center leases).
 That's because these are liabilities required for Microsoft to operate, and they are not really debts.
-It's worth noting that Microsoft has $15 bn in accounts payable.
-How impressive is it that they have $15 bn in unpaid bills?
+It's worth noting that Microsoft has \\$15 bn in accounts payable.
+How impressive is it that they have \\$15 bn in unpaid bills?
 You got to have a lot of credit with your suppliers to do that.
 
-All debt adds up to $147,075 million in Q3 2023, very close to $156,918 million in Q4 2022.
+All debt adds up to \\$147,075 million in Q3 2023, very close to \\$156,918 million in Q4 2022.
 
 This give us:
 
@@ -91,7 +91,7 @@ This give us:
 net_liabilities = 147,075 - 192,559 = -45,484
 ```
 
-which can be added to the market cap (today) of `$343.77 per share * 7,435 million shares = $2,556,097 billion` to get the enterprise value:
+which can be added to the market cap (today) of `\\$343.77 per share * 7,435 million shares = \\$2,556,097 billion` to get the enterprise value:
 
 ```
 enterprise_value = 2,556,097 - 45,484 = 2,510,613
@@ -144,7 +144,7 @@ It's also worth noting that most of the revenue growth comes from services like 
 This has been a trend for a while.
 
 The operating margins are also very high at 42% of revenue and net income is 37% of revenue.
-Microsoft pays $4 bn in taxes, which is a 13% tax rate, compared to an average of 25% in the US.
+Microsoft pays \\$4 bn in taxes, which is a 13% tax rate, compared to an average of 25% in the US.
 They do have a significant part of their business outside of the US though.
 
 It's also notable how the cloud sector revenue has grown by 25% in 2022 and net income by 19%.
@@ -179,22 +179,22 @@ It's a bit more complicated, but here is what a summary would look like:
 | Foreign exchange rate changes           |   (141) |
 | **Net cash**                            |   (293) |
 
-This all means that, despite its incredible net income, Microsoft actually lost $293 million in cash in 2022.
+This all means that, despite its incredible net income, Microsoft actually lost \\$293 million in cash in 2022.
 
-Indeed, if you look at the 10-K balance sheet, you'll see that cash and cash equivalents decreased from $14,224 billion in 2021 to $13,931 billion in 2022, which is very close to the amount we saw in the 10-Q balance sheet for 2023.
+Indeed, if you look at the 10-K balance sheet, you'll see that cash and cash equivalents decreased from \\$14,224 billion in 2021 to \\$13,931 billion in 2022, which is very close to the amount we saw in the 10-Q balance sheet for 2023.
 
-The cashflow statement includes $14 bn in D&A that is added back to reconcile the net income of $72 bn with the cashflow from operations.
+The cashflow statement includes \\$14 bn in D&A that is added back to reconcile the net income of \\$72 bn with the cashflow from operations.
 
 What does this mean?
-If I buy some equipment today worth $100, I'll deduct $100 from my balance sheet cash and add $100 to my balance sheet PP&E.
+If I buy some equipment today worth \\$100, I'll deduct \\$100 from my balance sheet cash and add \\$100 to my balance sheet PP&E.
 
-Now, do I have a $100 asset in my balance sheet forever?
+Now, do I have a \\$100 asset in my balance sheet forever?
 No, because this equipment will lose value over time.
-Let's say that it loses $10 of value every year, so that in 10 years it's worth $0.
+Let's say that it loses \\$10 of value every year, so that in 10 years it's worth \\$0.
 
-In the first year, I'll add a $10 expense to my income statement as an expense (perhaps under G&A or cost of revenue).
-I keep adding this $10 expense every year for 10 years.
-But if I look at my bank account, I don't see this $10 expense.
+In the first year, I'll add a \\$10 expense to my income statement as an expense (perhaps under G&A or cost of revenue).
+I keep adding this \\$10 expense every year for 10 years.
+But if I look at my bank account, I don't see this \\$10 expense.
 So, to reconcile, I add it back to my operating cash flow.
 (Note: I have to pay taxes on my operating income, not on my operating cash flow).
 
@@ -209,7 +209,7 @@ So for the purposes of forecasting, I'll just look at the net income and not wor
 
 The question we have to ask is: how much will this grow in the future?
 19% is a very high growth rate, but where is it coming from?
-On their [2023 Q3 press release](https://www.microsoft.com/en-us/investor/earnings/FY-2023-Q3/press-release-webcast), Microsoft said that their cloud reveneue grew 22% year-over-year for that quarter ($28.5 bn), citing the innovations in AI and being the "platform of choice" for customers in this space. In the earnings call, they said:
+On their [2023 Q3 press release](https://www.microsoft.com/en-us/investor/earnings/FY-2023-Q3/press-release-webcast), Microsoft said that their cloud reveneue grew 22% year-over-year for that quarter (\\$28.5 bn), citing the innovations in AI and being the "platform of choice" for customers in this space. In the earnings call, they said:
 
 > Unilever, for example, went all-in on Azure this quarter, in one of the largest-ever cloud migrations in the consumer goods industry.
 

@@ -12,8 +12,8 @@ My starting point for this post is this [reddit thread](https://www.reddit.com/r
 The thread is from April 6th 2023 and the author is trying to value Microsoft stock.
 
 Given a few assumptions like the revenue growth rate, operating margin and cost of capital, they arrive at a number
-of $253 per share. 
-Microsoft (MSFT in NASDAQ) is trading at the moment at $305, so the author concludes that the stock is overvalued.
+of \\$253 per share. 
+Microsoft (MSFT in NASDAQ) is trading at the moment at \\$305, so the author concludes that the stock is overvalued.
 
 I don't want to know if this person got it right or wrong, but they are clearly using a method, and it turns out
 that this is a very popular method for valuing stocks.
@@ -118,7 +118,7 @@ The [Discounted Cash Flow](https://en.wikipedia.org/wiki/Discounted_cash_flow) (
 the expected future cash flows of the company. 
 
 To value a stock according to DCF, we project the future cash flows of the company and then discount them to the present. 
-Microsoft has 7.411 billion outstanding shares, and its last reported net earnings are $71.5 bn.
+Microsoft has 7.411 billion outstanding shares, and its last reported net earnings are \\$71.5 bn.
 We computed that the risk premium of MSFT is 9.5%.
 
 Let's assume that this is going to be the case for the next 10 years.
@@ -186,12 +186,12 @@ value # 1,319.13
 
 ```
 
-So the enterprise value according to our valuation model would be $1,319.13 bn.
-To get our market cap estimate, we can subtract the total cash assets ($100 bn)
-and subtract debt ($60 bn) taken from Microsoft's balance sheet.
-This results on a market cap of $1,279 bn, or $172 per share.
+So the enterprise value according to our valuation model would be \\$1,319.13 bn.
+To get our market cap estimate, we can subtract the total cash assets (\\$100 bn)
+and subtract debt (\\$60 bn) taken from Microsoft's balance sheet.
+This results on a market cap of \\$1,279 bn, or \\$172 per share.
 
-In theory, this would suggest that this stock, currently sitting at $305, is 
+In theory, this would suggest that this stock, currently sitting at \\$305, is 
 massively overvalued. However, there are a few caveats to this model.
 
 Firstly, it assumes a constant (or stepwise) growth rate and 

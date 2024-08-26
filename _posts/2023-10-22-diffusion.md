@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to solve differential equations using convolutions"
-date:   2023-08-21 15:00:00 +0000
+date:   2023-10-22 15:00:00 +0000
 categories: maths
 ---
 
@@ -53,14 +53,16 @@ where $A_{\mu, \nu}$ is a constant.
 The complete solution is a sum over all possible values of $\mu$ and $\nu$ compatible with the boundary and initial conditions.
 
 To satisfy boundary conditions
-$$u(x,0) = u(x,L) = u(0, y) = u(L, y) = 0$$
+
+$$ u(x,0) = u(x,L) = u(0, y) = u(L, y) = 0 $$
+
 we need to choose $\mu$ and $\nu$ such that $\mu = n \pi / L$ and $\nu = m \pi / L$ for integers $n$ and $m$.
 
 And to satisfy the initial condition, we need to choose $A_{\mu, \nu}$ such that $u(x, y, 0)$ matches the series expansion of $f(x, y)$.
 
 ## Numerical solution
 
-We can also solve this equation numerically.
+Alternatively, we can solve this equation numerically.
 We'll discretise space into a grid of $N$ points $(x_i, y_j)$, where $i$ and $j$ are integers (we can just refer to the points as $(i, j)$ to make it simple).
 We'll also discretise time into a series of $M$ time steps $t_k$ up to a limit $t_M$.
 
@@ -129,7 +131,7 @@ u = solve_diffusion(u)
 
 We can clearly see diffusion happening:
 
-![diffusion](assets/diffusion.png)
+![diffusion](/assets/diffusion.png)
 
 ## Convolutions
 
@@ -163,7 +165,7 @@ Now let's see what happens when we try this with different initial conditions.
 Let's place the disk lower, near the bottom edge of the square.
 The solution looks like this:
 
-![diffusion_bottom](assets/diffusion_bottom.png)
+![diffusion_bottom](/assets/diffusion_bottom.png)
 
 We can see something interesting happening there near the edge.
 `signal.convolve2d` has a `boundary` argument that lets us specify what happens at the edges. 
@@ -184,9 +186,9 @@ The other options are `wrap` and `symm`.
 `wrap` is equivalent to periodic boundary conditions: it pads the image with copies of itself.
 `symm`, on the other hand, is equivalent to reflecting the image at the edges.
 
-You can see the difference in the following images:
+You can see the difference in the images below:
 
-![diffusion_boundary](assets/diffusion_boundary.png)
+![diffusion_boundary](/assets/diffusion_boundary.png)
 
 In the case where we are modeling the diffusion of a substance through a constrained volume, like a closed container, the appropriate boundary conditions are no flux conditions, also known as Neumann boundary conditions:
 
@@ -200,8 +202,9 @@ $$\frac{u_{i+1, j} - u_{i, j}}{\Delta x} = \frac{u_{i, j+1} - u_{i, j}}{\Delta y
 
 or 
 
-$$u_{i+1, j} = u_{i, j}$$
-$$u_{i, j+1} = u_{i, j}$$
+$$ u_{i+1, j} = u_{i, j} $$
+
+$$ u_{i, j+1} = u_{i, j} $$
 
 This is equivalent to reflecting the image at the edges, which is what `symm` does.
 
@@ -214,7 +217,7 @@ We'll assume that we have the cross section of a cylinder, and half of it is fil
 A naive application of `signal.convolve2d` wouldn't do the job because our boundary conditions are not defined at the edge of the image.
 We can try to apply the filter and then crop the result to the domain:
 
-![diffusion_tube_naive](assets/diffusion_tube_naive.png)
+![diffusion_tube_naive](/assets/diffusion_tube_naive.png)
 
 This looks quite nice, but it's not correct.
 It's essentially assuming that the concentration of the substance is zero near the edges, which is false.
@@ -261,11 +264,13 @@ def solve_diffusion3(u, domain):
 
 This gives the correct result:
 
-![diffusion_tube](assets/diffusion_tube.png)
+![diffusion_tube](/assets/diffusion_tube.png)
 
 The cool thing about this is that it works for any domain - it doesn't have to be symmetric:
 
-![diffusion_starfish](assets/diffusion_starfish.png)
-![diffusion_hollow_disk](assets/diffusion_hollow_disk.png)
+![diffusion_starfish](/assets/diffusion_starfish.png)
+![diffusion_hollow_disk](/assets/diffusion_hollow_disk.png)
+
+_Thanks to [Thiago T. Varella](https://thiagotvarella.github.io/) for helpful suggestions_
 
 <!-- Code can be found [here](assets/diffusion.py) -->
