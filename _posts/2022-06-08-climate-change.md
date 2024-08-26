@@ -236,7 +236,7 @@ land usage by humans is usually the main driver for species changing location.)
 
 These changes have impacted humans too. One interesting example of this is the case of tropical diseases such as dengue, 
 malaria and chukungunya occurring in non-endemic regions in Nepal - where the warming rate is 
-[higher](https://www.researchgate.net/publication/233808431_Climate_Change_Livestock_Sector_Vulnerability_and_Adaptation_in_Nepal) 
+[higher](https://opac.narc.gov.np/opac_css/index.php?lvl=notice_display&id=10127) 
 than global average. (For many more examples see Table SM2.1 in AR6 WGII.)
 
 According to the report, we can attribute to climate change the increased frequency and intensity of extreme heat and drought events - 

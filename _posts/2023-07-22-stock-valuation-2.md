@@ -26,7 +26,7 @@ enterprise_value = market_cap - cash + debt
 you can think of it as the cost to take over the firm: you would need to pay for all the shares and also pay off all the debt, but you would get all the cash in the balance sheet.
 
 We can find these values looking at Microsoft's balance sheet, which can be found in the SEC (Securities and Exchange Commission) website.
-You can go ahead and open [the SEC website](https://www.sec.gov/edgar/searchedgar/companysearch) and search for Microsoft. 
+You can go ahead and open [the SEC website](https://www.sec.gov/search-filings) and search for Microsoft. 
 
 Open the latest report, which will either be a 10-K (annual report) or a 10-Q (quarterly report).
 Today (July 2023) the latest report is the 10-Q for the quarter ending on March 31, 2023 (Q3).
