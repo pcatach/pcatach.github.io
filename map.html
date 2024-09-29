@@ -6,41 +6,51 @@
 <body>
   <div id="map" style="width: 100%; height: 100%"></div>
   <script type="module">
-    async function fetchWikipediaSummary(query) {
-        const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`;
-        console.log(url);
-        try {
-            const response = await fetch(url);
-            if (!response.ok) throw new Error('Network response was not ok');
-            const data = await response.json();
-            return data.extract; // The summary text
-        } catch (error) {
-            console.error('Error fetching Wikipedia summary:', error);
-            return 'No summary available';
-        }
+    async function getWikipediaSumary(query) {
+      const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(query)}`;
+      console.log(url);
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Network response was not ok');
+      return await response.json();
+    }
+
+    async function summarise(query) {
+      if (query === undefined) {
+        return 'No summary available';
+      }
+      try {
+        const response = await getWikipediaSumary(query);
+        return response.extract;
+      } catch (error) {
+        console.error('Error fetching Wikipedia summary:', error);
+        return `No summary available for ${query}`;
+      }
     }
 
     function getFeatures(map, point) {
-      let params = [{ layers: relevantLayers }]
+      let params = [{ layers: relevantLayers }];
       if (point != undefined) {
         params.unshift(point)
       }
       console.log("Params:", params);
       const features = map.queryRenderedFeatures(...params);
       console.log("Features:", features);
-      return features.map((feature) => feature.properties.name_int);
+      return features;
     }
 
     function getLongAndLat() {
-      return new Promise((resolve, reject) =>
-        navigator.geolocation.getCurrentPosition(resolve, reject)
-      );
+      return new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition((position) => {
+          resolve([position.coords.longitude, position.coords.latitude]);
+        }, reject)
+      });
     }
 
+    let relevantLayers = [];
+    let featureNames = [];
 
     console.log("Loading position");
-    const currentPosition = await getLongAndLat();
-    const coords = [currentPosition.coords.longitude, currentPosition.coords.latitude];
+    const coords = await getLongAndLat();
     console.log(`Got position ${coords}`);
 
     console.log("Loading map");
@@ -49,23 +59,38 @@
       center: coords,
       zoom: 15,
       container: 'map',
-    });
-    const map = window.map
 
-    const relevantLayers = ['poi_r20', 'poi_r7', 'poi_r1', 'poi_transit', 'label_other', 'label_village', 'label_town', 'label_state', 'label_city', 'label_city_capital', 'label_country_3', 'label_country_2', 'label_country_1']
+    });
+    const map = window.map; // for debugging
+
 
     map.on("load", () => {
-      const featureNames = getFeatures(map);
+      relevantLayers = map.getStyle().layers.filter((layer) => !["fill", "line"].includes(layer.type)).map((layer) => layer.id);
+
+      map.on("mousemove", relevantLayers, (event) => {
+        map.getCanvas().style.cursor = "pointer";
+      })
+
+      map.on("mouseleave", relevantLayers, (event) => {
+        map.getCanvas().style.cursor = "";
+      })
     })
 
     map.on("click", async (event) => {
-      const featureNames = getFeatures(map, event.point);
+      const features = getFeatures(map, event.point);
+      featureNames = features.map((feature) => feature.properties.name_int)
 
       if (featureNames.length > 0) {
-        const summary = await fetchWikipediaSummary(featureNames[0]);
+        const summary = await summarise(featureNames[0]);
         alert(summary);
       }
-
     })
+
+    map.addControl(
+      new maplibregl.GeolocateControl({
+        positionOptions: { enableHighAccuracy: true },
+        trackUserLocation: true
+      })
+    )
   </script>
 </body>
