@@ -10,6 +10,8 @@ Here are some links that I like:
 
 ## Life
 
+[the quiet art of attention](https://billwear.github.io/art-of-attention.html)
+
 [What You'll Wish You'd Known](http://www.paulgraham.com/hs.html)
 
 [Meditations on Moloch](https://slatestarcodex.com/2014/07/30/meditations-on-moloch/)
