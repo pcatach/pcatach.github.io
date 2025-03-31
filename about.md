@@ -28,7 +28,7 @@ Here are some links that I like:
 
 ## Maths and physics
 
-[You and Your Research](http://www.paulgraham.com/hamming.html)
+[You and Your Research](https://www.cs.virginia.edu/~robins/YouAndYourResearch.html)
 
 [Striving for Greatness in All You Do](https://www.mccurley.org/advice/hamming_advice.html)
 
