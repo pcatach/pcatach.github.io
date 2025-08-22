@@ -24,6 +24,10 @@ Here are some links that I like:
 
 [Don't Call Yourself a Programmer](https://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/)
 
+[Everything I know about good system design](https://www.seangoedecke.com/good-system-design/)
+
+[Crushing JIRA tickets is a party trick, not a path to impact](https://www.seangoedecke.com/party-tricks/)
+
 [Reverse Engineering the source code of the BioNTech/Pfizer SARS-CoV-2 Vaccine](https://berthub.eu/articles/posts/reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/)
 
 ## Maths and physics
